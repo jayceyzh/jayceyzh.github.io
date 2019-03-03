@@ -1,0 +1,95 @@
+
+jQuery(document)
+		.ready(function($) {
+			$(".qrcode").hover(function() {
+				// alert('show');
+				$("#bottom-qrcode").show();
+			}, function() {
+				// alert('hide');
+				$("#bottom-qrcode").hide();
+			});
+
+			$(window).scroll(
+					function() {
+						if ($(window).scrollTop() >= 100) {
+							$(".to-top").fadeIn();
+							if ($('#htmlfeedback-container').length) {
+								if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i
+										.test(navigator.userAgent)) {
+									// some code..
+								} else {
+									$("#htmlfeedback-container")
+											.show();
+								}
+							}
+						} else {
+							$(".to-top").fadeOut();
+						}
+					});
+			// 
+			$(".to-top").click(function(event) {
+				$('body').animate({
+					scrollTop : 0
+				}, 100);
+				return false;
+			});
+
+	// init function list ...
+	view_times();
+	login_state();
+});
+
+
+
+
+// 查看次数
+function view_times(){
+	var article_id = $("#article_id").val();
+	var catid = $("#catid").val();
+	if(article_id==undefined && catid==undefined){
+		return false;
+	}
+	var postdata = {'article_id': article_id, 'catid': catid};
+	
+	$.ajax({
+		url : '/article/view_times',
+		type : 'post',
+		dataType : 'json',
+		data : postdata,
+		error : function() {},
+		success : function(data, textStatus) {
+			//$("#click_times").html(data.rs);
+		}
+	});
+}
+
+// 用户登录状态信息
+function login_state(){
+	$.ajax({
+		url : '/login/status',
+		type : 'get',
+		dataType : 'html',
+		error : function() {},
+		success : function(data, textStatus) {			
+			$("#login-state").html(data);
+		}
+	});
+}
+
+
+// 返回顶部
+function backTop(){
+	document.body.scrollTop = 0;
+    document.documentElement.scrollTop = 0;
+}
+
+
+// 教程纠错
+$("#article-correction").click(function(){
+	var url = $(this).attr('data-url');
+	if(url){
+		window.open(url, "_blank");
+	}else{
+		
+	}
+})

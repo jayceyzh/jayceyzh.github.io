@@ -1,0 +1,575 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta charset=UTF-8"UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+		<meta name="apple-mobile-web-app-title" content="yiibai">
+		<title>Git教程&trade;</title>
+		<meta name="keywords" content="Git,Github,Github教程,Github SVN,Github使用">
+		<meta name="description" content="Git是一个分布式的版本控制系统，最初由Linus Torvalds编写，用作Linux内核代码的管理。在推出后，Git在其它项目中也取得了很大成功，尤其是在Ruby社区中。目前，包括Rubinius和Merb在内的很多知名项目都使用了Git。Git同样可以被诸如Capistrano和Vlad th">
+		<link rel="stylesheet" href="../static/css/fonts/font-awesome.min.css" tppabs="https://www.yiibai.com/static/css/fonts/font-awesome.min.css" media="all" />
+		<link rel="stylesheet" href="../static/layui/css/layui.css-v=v5.0.1215.css" tppabs="https://www.yiibai.com/static/layui/css/layui.css?v=v5.0.1215">
+		<link rel="stylesheet" href="../static/css/all.css-v=v5.0.1215.css" tppabs="https://www.yiibai.com/static/css/all.css?v=v5.0.1215" media="all">
+		<link rel="stylesheet" href="../static/css/prism.css-v=v5.0.1215.css" tppabs="https://www.yiibai.com/static/css/prism.css?v=v5.0.1215" media="all">
+		<!-- list-article.html -->
+		<!--[if lt IE 9]>
+		<script src="../../apps.bdimg.com/libs/html5shiv/3.7/html5shiv.min.js" tppabs="http://apps.bdimg.com/libs/html5shiv/3.7/html5shiv.min.js"></script>
+		<![endif]-->
+	</head>
+	<body class="page-home">
+
+		
+<nav id="header-nav" style="float:left;width:100%;display:none;"></nav>
+
+
+		<section class="container container-page" style="margin-top: 24px;">
+			<div class="pageside">
+				<div class="pagemenus">
+					<ul class="pagemenu">
+						<li class="navto-ads active">
+							<a> <i class="fa fa-list"></i>&nbsp;&nbsp;Git教程</a>
+
+							
+						</li>
+												<li style="">
+							<a href="git_basic_concepts.html" title="Git基础概念" style="">Git基础概念</a>
+						</li>
+												<li style="">
+							<a href="getting-started-a-short-history-of-git.html"  title="Git历史（简史）" style="">Git历史（简史）</a>
+						</li>
+												<li style="">
+							<a href="getting-started-git-basics.html"  title="Git基础和原理" style="">Git基础和原理</a>
+						</li>
+												<li style="">
+							<a href="git_environment.html"  title="Git安装设置" style="">Git安装设置</a>
+						</li>
+												<li style="">
+							<a href="getting-started-first-time-git-setup.html" tppabs="https://www.yiibai.com/git/getting-started-first-time-git-setup.html" title="Git使用前配置" style="">Git使用前配置</a>
+						</li>
+												<li style="">
+							<a href="git-quick-start.html" tppabs="https://www.yiibai.com/git/git-quick-start.html" title="Git快速入门" style="">Git快速入门</a>
+						</li>
+												<li style="">
+							<a href="git_life_cycle.html" tppabs="https://www.yiibai.com/git/git_life_cycle.html" title="Git工作流程" style="">Git工作流程</a>
+						</li>
+												<li style="">
+							<a href="git_create_repository.html" tppabs="https://www.yiibai.com/git/git_create_repository.html" title="Git创建存储库" style="">Git创建存储库</a>
+						</li>
+												<li style="">
+							<a href="git_clone_operation.html" tppabs="https://www.yiibai.com/git/git_clone_operation.html" title="Git克隆操作" style="">Git克隆操作</a>
+						</li>
+												<li style="">
+							<a href="git_perform_changes.html" tppabs="https://www.yiibai.com/git/git_perform_changes.html" title="Git执行变更操作" style="">Git执行变更操作</a>
+						</li>
+												<li style="">
+							<a href="git_review_changes.html" tppabs="https://www.yiibai.com/git/git_review_changes.html" title="Git查看更改" style="">Git查看更改</a>
+						</li>
+												<li style="">
+							<a href="git_commit_changes.html" tppabs="https://www.yiibai.com/git/git_commit_changes.html" title="Git提交更改" style="">Git提交更改</a>
+						</li>
+												<li style="">
+							<a href="git_push_operation.html" tppabs="https://www.yiibai.com/git/git_push_operation.html" title="Git推送（push）操作" style="">Git推送（push）操作</a>
+						</li>
+												<li style="">
+							<a href="git_update_operation.html" tppabs="https://www.yiibai.com/git/git_update_operation.html" title="Git更新操作" style="">Git更新操作</a>
+						</li>
+												<li style="">
+							<a href="git_stash_operation.html" tppabs="https://www.yiibai.com/git/git_stash_operation.html" title="Git隐藏(Stash)操作" style="">Git隐藏(Stash)操作</a>
+						</li>
+												<li style="">
+							<a href="git_move_operation.html" tppabs="https://www.yiibai.com/git/git_move_operation.html" title="Git移动操作" style="">Git移动操作</a>
+						</li>
+												<li style="">
+							<a href="git_rename_operation.html" tppabs="https://www.yiibai.com/git/git_rename_operation.html" title="Git重命名操作" style="">Git重命名操作</a>
+						</li>
+												<li style="">
+							<a href="git_delete_operation.html" tppabs="https://www.yiibai.com/git/git_delete_operation.html" title="Git删除操作" style="">Git删除操作</a>
+						</li>
+												<li style="">
+							<a href="git_fix_mistakes.html" tppabs="https://www.yiibai.com/git/git_fix_mistakes.html" title="Git修正错误" style="">Git修正错误</a>
+						</li>
+												<li style="">
+							<a href="git_tag_operation.html" tppabs="https://www.yiibai.com/git/git_tag_operation.html" title="Git标签操作" style="">Git标签操作</a>
+						</li>
+												<li style="">
+							<a href="git_patch_operation.html" tppabs="https://www.yiibai.com/git/git_patch_operation.html" title="Git补丁操作" style="">Git补丁操作</a>
+						</li>
+												<li style="">
+							<a href="git_managing_branches.html" tppabs="https://www.yiibai.com/git/git_managing_branches.html" title="Git管理分支" style="">Git管理分支</a>
+						</li>
+												<li style="">
+							<a href="git_handling_conflicts.html" tppabs="https://www.yiibai.com/git/git_handling_conflicts.html" title="Git处理冲突" style="">Git处理冲突</a>
+						</li>
+												<li style="">
+							<a href="git_different_platforms.html" tppabs="https://www.yiibai.com/git/git_different_platforms.html" title="Git不同平台换行符问题" style="">Git不同平台换行符问题</a>
+						</li>
+												<li style="">
+							<a href="git_remote_operate.html" tppabs="https://www.yiibai.com/git/git_remote_operate.html" title="Git远程操作详解" style="">Git远程操作详解</a>
+						</li>
+						
+						
+												<li style="font-size:16px;font-weight:bold;color:#666;">
+							<a style="background-color: #f8f9f9;cursor:text;font-size:16px;color: #666;">Git常用命令</a>
+						</li>
+														<li >
+								<a href="git_config.html" tppabs="https://www.yiibai.com/git/git_config.html" title="git config命令">git config命令</a>
+							</li>
+														<li >
+								<a href="git_help.html" tppabs="https://www.yiibai.com/git/git_help.html" title="git help命令">git help命令</a>
+							</li>
+														<li >
+								<a href="git_init.html" tppabs="https://www.yiibai.com/git/git_init.html" title="git init命令">git init命令</a>
+							</li>
+														<li >
+								<a href="git_add.html" tppabs="https://www.yiibai.com/git/git_add.html" title="git add命令">git add命令</a>
+							</li>
+														<li >
+								<a href="git_clone.html" tppabs="https://www.yiibai.com/git/git_clone.html" title="git clone命令">git clone命令</a>
+							</li>
+														<li >
+								<a href="git_status.html" tppabs="https://www.yiibai.com/git/git_status.html" title="git status命令">git status命令</a>
+							</li>
+														<li >
+								<a href="git_diff.html" tppabs="https://www.yiibai.com/git/git_diff.html" title="git diff命令">git diff命令</a>
+							</li>
+														<li >
+								<a href="git_commit.html" tppabs="https://www.yiibai.com/git/git_commit.html" title="git commit命令">git commit命令</a>
+							</li>
+														<li >
+								<a href="git_reset.html" tppabs="https://www.yiibai.com/git/git_reset.html" title="git reset命令">git reset命令</a>
+							</li>
+														<li >
+								<a href="git_rm.html" tppabs="https://www.yiibai.com/git/git_rm.html" title="git rm命令">git rm命令</a>
+							</li>
+														<li >
+								<a href="git_mv.html" tppabs="https://www.yiibai.com/git/git_mv.html" title="git mv命令">git mv命令</a>
+							</li>
+														<li >
+								<a href="git_branch.html" tppabs="https://www.yiibai.com/git/git_branch.html" title="git branch命令">git branch命令</a>
+							</li>
+														<li >
+								<a href="git_checkout.html" tppabs="https://www.yiibai.com/git/git_checkout.html" title="git checkout命令">git checkout命令</a>
+							</li>
+														<li >
+								<a href="git_merge.html" tppabs="https://www.yiibai.com/git/git_merge.html" title="git merge命令">git merge命令</a>
+							</li>
+														<li >
+								<a href="git_mergetool.html" tppabs="https://www.yiibai.com/git/git_mergetool.html" title="git mergetool命令">git mergetool命令</a>
+							</li>
+														<li >
+								<a href="git_log.html" tppabs="https://www.yiibai.com/git/git_log.html" title="git log命令">git log命令</a>
+							</li>
+														<li >
+								<a href="git_stash.html" tppabs="https://www.yiibai.com/git/git_stash.html" title="git stash命令">git stash命令</a>
+							</li>
+														<li >
+								<a href="git_tag.html" tppabs="https://www.yiibai.com/git/git_tag.html" title="git tag命令">git tag命令</a>
+							</li>
+														<li >
+								<a href="git_fetch.html" tppabs="https://www.yiibai.com/git/git_fetch.html" title="git fetch命令">git fetch命令</a>
+							</li>
+														<li >
+								<a href="git_pull.html" tppabs="https://www.yiibai.com/git/git_pull.html" title="git pull命令">git pull命令</a>
+							</li>
+														<li >
+								<a href="git_push.html" tppabs="https://www.yiibai.com/git/git_push.html" title="git push命令">git push命令</a>
+							</li>
+														<li >
+								<a href="git_remote.html" tppabs="https://www.yiibai.com/git/git_remote.html" title="git remote命令">git remote命令</a>
+							</li>
+														<li >
+								<a href="git_submodule.html" tppabs="https://www.yiibai.com/git/git_submodule.html" title="git submodule命令">git submodule命令</a>
+							</li>
+														<li >
+								<a href="git_show.html" tppabs="https://www.yiibai.com/git/git_show.html" title="git show命令">git show命令</a>
+							</li>
+														<li >
+								<a href="git_shortlog.html" tppabs="https://www.yiibai.com/git/git_shortlog.html" title="git shortlog命令">git shortlog命令</a>
+							</li>
+														<li >
+								<a href="git_describe.html" tppabs="https://www.yiibai.com/git/git_describe.html" title="git describe命令">git describe命令</a>
+							</li>
+														<li >
+								<a href="git_rebase.html" tppabs="https://www.yiibai.com/git/git_rebase.html" title="git rebase命令">git rebase命令</a>
+							</li>
+							
+						
+					</ul>
+
+				</div>
+			</div>
+			<div class="content" id="navs">
+
+				<header class="article-header">
+					<h1 class="article-title" style="text-align:center;">Git教程</h1>
+					<div class="article-meta" style="margin-top:20px;font-size:14px;">
+						
+						<span class="item">作者：Maxsu</span>
+						<span class="item" style="margin-left:20px;"></span>
+						<span style="font-weight:bold;margin-left:24px;" id="qq-group">Java技术QQ群：227270512 / Linux QQ群：479429477</span>
+
+					</div>
+				</header>
+				<!--// -->
+				<article>
+					<a name="article-start" id="article-start"></a>
+
+					<div style="float:left;width:100%;margin-top:2px;padding-right:6px;">
+						<script async src="../../pagead2.googlesyndication.com/pagead/js/adsbygoogle.js" tppabs="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+						<!-- 顶部_720x90 -->
+						<ins class="adsbygoogle"
+						style="display:inline-block;width:728px;height:90px"
+						data-ad-client="ca-pub-1090193214637198"
+						data-ad-slot="9805510053"></ins>
+						<script>
+							( adsbygoogle = window.adsbygoogle || []).push({});
+						</script>
+					</div>
+
+					<div style="float:left;width:100%;heigh:30px;padding-bottom:10px;padding-top:3px;" id="adv-javalive">
+						<a href="javascript:if(confirm('https://www.linuxprobe.com/chapter-01.html  \n\n??ļ????? Teleport Ultra ??, ?Ϊ ??һ???????????????Ϊ?????????ĵ????  \n\n????????????'))window.location='https://www.linuxprobe.com/chapter-01.html'" tppabs="https://www.linuxprobe.com/chapter-01.html" title="linuxprobe" target="_blank"><img src="../static/images/adv/linuxprobe.jpg" tppabs="https://www.yiibai.com/static/images/adv/linuxprobe.jpg" alt="linuxprobe" style="width:100%;heigh:30px;" /> </a>
+					</div>
+
+					<div style="width:100%;float:left;" class="article-content">
+						<input type="hidden" name="article_id" id="article_id" value="0"/>
+						<input type="hidden" name="catid" id="catid" value="37"/>
+
+						<p>Git 是分布式版本控制和源代码管理系统，重点使用和管理代码的速度。 Git 最初是由<em>Linus Torvalds</em>设计开发的，用于管理Linux内核开发。Git 是根据GNU通用公共许可证版本2的条款分发的自由/免费软件。</p>
+<p>Git官方网址是：<a href="javascript:if(confirm('https://git-scm.com/  \n\n??ļ????? Teleport Ultra ??, ?Ϊ ??һ???????????????Ϊ?????????ĵ????  \n\n????????????'))window.location='https://git-scm.com/'" tppabs="https://git-scm.com/">https://git-scm.com/</a> ，打开后如下图所示 -</p>
+<p><img src="../uploads/images/201707/1107/132210726_87668-1.png" tppabs="http://www.yiibai.com/uploads/images/201707/1107/132210726_87668.png" alt="Git教程" title="Git教程"></p>
+<p>本教程将介绍如何在分布式环境中使用 Git 进行项目版本控制，同时在基于Web和非基于Web的应用程序开发中工作。</p>
+<h2 id="h2-u9762u5411u8BFBu8005"><a name="面向读者" class="reference-link"></a><span class="header-link octicon octicon-link"></span>面向读者</h2><p>本教程是为那些希望学习 Git 版本控制系统技能的程序员和专业人士而设计和编写的。本教程还可以作为从零开始学习 Git 版本控制系统的入门教程。本教程将一步一步地演示和帮助初学者学习 Git 版本控制系统的基本功能。在完成本教程学习之后，您会发现自己在使用 Git 版本控制系统方面具有一定的专业知识，并能熟悉操作和使用 Git 工具。</p>
+<h2 id="h2-u524Du63D0u6761u4EF6"><a name="前提条件" class="reference-link"></a><span class="header-link octicon octicon-link"></span>前提条件</h2><p>我们假设您将使用 Git 版本控制系统来处理各种<code>Java</code>或其它软件开发的项目。因此，如果您的软件开发生命周期可在一定程度曝光，或开发基于Web和非基于Web的应用程序的工作文档，这将有利于学习和理解使用 Git 版本控制系统 。</p>
+<h2 id="h2--git-"><a name="在学习Git需要清楚的几个术语" class="reference-link"></a><span class="header-link octicon octicon-link"></span>在学习Git需要清楚的几个术语</h2><p><img src="../uploads/images/201707/1207/683090701_88630-1.jpg" tppabs="http://www.yiibai.com/uploads/images/201707/1207/683090701_88630.jpg" alt=""></p>
+<p><strong>Workspace</strong>：工作区<br><strong>Index/Stage</strong>：暂存区，也叫索引<br><strong>Repository</strong>：仓库区（或本地仓库），也存储库<br><strong>Remote</strong>：远程仓库</p>
+<p><strong>1. 有关几个名词解释</strong></p>
+<p><strong>工作区</strong>: 通过<code>git init</code>创建的代码库的所有文件但是不包括<code>.git</code>文件(版本库)<br><strong>暂存区</strong>: 通过<code>git add ./*/*Xxx/Xxxx*</code> 添加的修改,都是进入到暂存区了,肉眼不可见 通过 <code>git status</code> 可以看到修改的状态。</p>
+<p><strong>2. 什么是修改？</strong><br>比如你新增了一行，这就是一个修改，<br>删除了一行，也是一个修改，<br>更改了某些字符，也是一个修改，<br>删了一些又加了一些，也是一个修改，<br>甚至创建一个新文件，也算一个修改。</p>
+<h2 id="h2-u95EEu9898u53CDu9988"><a name="问题反馈" class="reference-link"></a><span class="header-link octicon octicon-link"></span>问题反馈</h2><p>我们不能保证您在此 Git 版本控制系统教程中不会遇到任何问题。本教程中的讲解，示例和代码等只是根据作者的理解来概括写出。由于作者水平和能力有限，因此不保正所有编写的文章都准确无误。但是如果有遇到任何错误或问题，请反馈给我们，我们会及时纠正以方便后续读者阅读。</p>
+
+						<br />
+						<p style="text-align:center;float:left;width:100%;margin-top:24px;margin-bottom:28px;">
+								<button class="layui-btn layui-btn-danger" id="btn-reward"> ¥ 我要打赏 </button>&nbsp;&nbsp;
+								
+						</p>
+
+						<p>
+							<b style="color:#f57e42;">易百教程移动端</b>：请扫描本页面底部(右侧)二维码并关注微信公众号，回复："<b>教程</b>" 选择相关教程阅读或直接访问：http://m.yiibai.com 。
+						</p>
+
+						<div style="width:100%;margin-bottom: 16px; height: 32px;margin-top:18px;">
+
+							<span style="float:right;">开始学习 >> ：<a href="git_basic_concepts.html#article-start" tppabs="https://www.yiibai.com/git/git_basic_concepts.html#article-start" style="float:right;" title="Git基础概念"><i class="layui-icon"></i>Git基础概念 </a></span>
+
+							<div id="googlead" style="float:left;margin-top:8px;">
+								<script async src="../../pagead2.googlesyndication.com/pagead/js/adsbygoogle.js" tppabs="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+								<!-- yiibai下方 -->
+								<ins class="adsbygoogle"
+								style="display:inline-block;width:728px;height:90px"
+								data-ad-client="ca-pub-1090193214637198"
+								data-ad-slot="6494738921"></ins>
+								<script>
+									( adsbygoogle = window.adsbygoogle || []).push({});
+								</script>
+							</div>
+						</div>
+
+						<div style="width:100%;margin-top:18px;float:left;">
+
+	<h4 style="color: #f57e42;padding-top:6px;padding-bottom: 4px;float: left;width: 100%;margin-bottom:12px;">加QQ群啦，易百教程官方技术学习群</h4>
+	<blockquote style="width:100%;float:left;margin-bottom:6px;padding-bottom:4px;">
+		注意：建议每个人选自己的技术方向加群，同一个QQ最多限加 3 个群。
+	</blockquote>
+	<ul style="width:100%;float:left;">
+		<li>
+			<b>Java技术群：</b> 227270512 （人数：3000，免费：否）
+		</li>
+		<li>
+			<b>Go开发者群（新）：</b> 851549018 （人数：1000，<span style="color:red;">免费</span>）
+		</li>
+		<li>
+			<b>PHP开发者群：</b> 460153241 （人数：2000，<span style="color:red;">免费</span>）
+		</li>
+		<li>
+			<b>MySQL/SQL群：</b> 418407075 （人数：2000，免费：否）
+		</li>
+		<li>
+			<b>大数据开发群：</b> 655154550 （人数：2000，免费：否）
+		</li>
+		<li>
+			<b>Python技术群：</b> 287904175 （人数：2000，免费：否）
+		</li>
+		<li>
+			<b>人工智能深度学习：</b> 456236082 （人数：2000，免费：否）
+		</li>
+		<li>
+			<b>测试工程师群：</b> 415553199 （人数：2000，免费：否）
+		</li>
+		<li>
+			<b>前端开发者群：</b> 410430016 （人数：2000，免费：否）
+		</li>
+		<li>
+			<b>C/C++技术群(新)：</b> 629264796 （人数：2000，<span style="color:red;">免费</span>）
+		</li>
+		<li>
+			<b>Node.js技术群(新)：</b> 621549808 （人数：2000，<span style="color:red;">免费</span>）
+		</li>
+		<li>
+			<b>PostgreSQL数据库群：</b> 539504187 （人数：1000，<span style="color:red;">免费</span>）
+		</li>
+		<li>
+			<b>Linux运维技术群：</b> 479429477 （人数：2000，免费：否）
+		</li>
+		
+		<li>
+			<b>Oracle数据库：</b> 175248146 （人数：2000，免费：否）
+		</li>
+		<li>
+			<b>C#/ASP.Net开发者：</b> 579821706 （人数：2000，<span style="color:red;">免费</span>）
+		</li>
+		<li>
+			<b>数据分析师群：</b> 397883996 （人数：2000，免费：否）
+		</li>
+	</ul>
+</div>
+
+					</div>
+
+					<div style="width:100%;float:left;">
+						<script async src="../../pagead2.googlesyndication.com/pagead/js/adsbygoogle.js" tppabs="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+						<ins class="adsbygoogle"
+						style="display:block"
+						data-ad-format="autorelaxed"
+						data-ad-client="ca-pub-1090193214637198"
+						data-ad-slot="1254304051"></ins>
+						<script>
+							( adsbygoogle = window.adsbygoogle || []).push({});
+						</script>
+					</div>
+
+				</article>
+
+			</div>
+
+			<div class="page-right">
+
+				<div class="item">
+
+					<script async src="../../pagead2.googlesyndication.com/pagead/js/adsbygoogle.js" tppabs="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+					<!-- GoogleAdv-300x250 -->
+					<ins class="adsbygoogle"
+					style="display:inline-block;width:300px;height:250px"
+					data-ad-client="ca-pub-1090193214637198"
+					data-ad-slot="9485766451"></ins>
+					<script>
+						( adsbygoogle = window.adsbygoogle || []).push({});
+					</script>
+
+				</div>
+
+				<div class="item" style="min-height:600px;">
+					<script async src="../../pagead2.googlesyndication.com/pagead/js/adsbygoogle.js" tppabs="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+					<!-- Right-300x600 -->
+					<ins class="adsbygoogle"
+					style="display:inline-block;width:300px;height:600px"
+					data-ad-client="ca-pub-1090193214637198"
+					data-ad-slot="9448740452"></ins>
+					<script>
+						( adsbygoogle = window.adsbygoogle || []).push({});
+					</script>
+				</div>
+
+			
+			</div>
+		</section>
+
+		<style>
+
+</style>
+<footer class="footer" style="width:100%;float:left;width: 100%;margin-top: 30px;">
+	<div class="container" id="yiiba-bottom">
+		<div class="ybm-block">
+			<div class="ybm cf">
+				<dl>
+					<dt>
+						推荐/最新教程
+					</dt>
+										<dd>
+						·<a href="javascript:if(confirm('https://www.yiibai.com/sqlserver/  \n\n??ļ????? Teleport Ultra ??, ?Ϊ ??һ???????????????Ϊ?????????ĵ????  \n\n????????????'))window.location='https://www.yiibai.com/sqlserver/'" tppabs="https://www.yiibai.com/sqlserver/" title="SQL Server教程" target="_blank">SQL Server教程</a>
+					</dd>
+										<dd>
+						·<a href="javascript:if(confirm('https://www.yiibai.com/web_service/  \n\n??ļ????? Teleport Ultra ??, ?Ϊ ??һ???????????????Ϊ?????????ĵ????  \n\n????????????'))window.location='https://www.yiibai.com/web_service/'" tppabs="https://www.yiibai.com/web_service/" title="Web Service教程" target="_blank">Web Service教程</a>
+					</dd>
+										<dd>
+						·<a href="javascript:if(confirm('https://www.yiibai.com/spring_cloud/  \n\n??ļ????? Teleport Ultra ??, ?Ϊ ??һ???????????????Ϊ?????????ĵ????  \n\n????????????'))window.location='https://www.yiibai.com/spring_cloud/'" tppabs="https://www.yiibai.com/spring_cloud/" title="Spring Cloud教程" target="_blank">Spring Cloud教程</a>
+					</dd>
+										<dd>
+						·<a href="javascript:if(confirm('https://www.yiibai.com/xslt/  \n\n??ļ????? Teleport Ultra ??, ?Ϊ ??һ???????????????Ϊ?????????ĵ????  \n\n????????????'))window.location='https://www.yiibai.com/xslt/'" tppabs="https://www.yiibai.com/xslt/" title="XSLT教程" target="_blank">XSLT教程</a>
+					</dd>
+										<dd>
+						·<a href="javascript:if(confirm('https://www.yiibai.com/xsd/  \n\n??ļ????? Teleport Ultra ??, ?Ϊ ??һ???????????????Ϊ?????????ĵ????  \n\n????????????'))window.location='https://www.yiibai.com/xsd/'" tppabs="https://www.yiibai.com/xsd/" title="XSD教程" target="_blank">XSD教程</a>
+					</dd>
+										<dd>
+						·<a href="javascript:if(confirm('https://www.yiibai.com/xquery/  \n\n??ļ????? Teleport Ultra ??, ?Ϊ ??һ???????????????Ϊ?????????ĵ????  \n\n????????????'))window.location='https://www.yiibai.com/xquery/'" tppabs="https://www.yiibai.com/xquery/" title="XQuery教程" target="_blank">XQuery教程</a>
+					</dd>
+										<dd>
+						·<a href="javascript:if(confirm('https://www.yiibai.com/xpath/  \n\n??ļ????? Teleport Ultra ??, ?Ϊ ??һ???????????????Ϊ?????????ĵ????  \n\n????????????'))window.location='https://www.yiibai.com/xpath/'" tppabs="https://www.yiibai.com/xpath/" title="XPath教程" target="_blank">XPath教程</a>
+					</dd>
+										<dd>
+						·<a href="javascript:if(confirm('https://www.yiibai.com/xml-rpc/  \n\n??ļ????? Teleport Ultra ??, ?Ϊ ??һ???????????????Ϊ?????????ĵ????  \n\n????????????'))window.location='https://www.yiibai.com/xml-rpc/'" tppabs="https://www.yiibai.com/xml-rpc/" title="XML-RPC远程方法调用教程" target="_blank">XML-RPC远程方法调用教程...</a>
+					</dd>
+					
+				</dl>
+				<dl>
+					<dt>
+						最新更新
+					</dt>
+										<dd>
+						·<a target="_blank" href="javascript:if(confirm('https://www.yiibai.com/sqlserver/sql-server-sample-database.html  \n\n??ļ????? Teleport Ultra ??, ?Ϊ ??һ???????????????Ϊ?????????ĵ????  \n\n????????????'))window.location='https://www.yiibai.com/sqlserver/sql-server-sample-database.html'" tppabs="https://www.yiibai.com/sqlserver/sql-server-sample-database.html" title="SQL Server示例数据库">SQL Server示例数据库...</a>
+					</dd>
+										<dd>
+						·<a target="_blank" href="javascript:if(confirm('https://www.yiibai.com/sqlserver/connect-to-the-sql-server.html  \n\n??ļ????? Teleport Ultra ??, ?Ϊ ??һ???????????????Ϊ?????????ĵ????  \n\n????????????'))window.location='https://www.yiibai.com/sqlserver/connect-to-the-sql-server.html'" tppabs="https://www.yiibai.com/sqlserver/connect-to-the-sql-server.html" title="连接到SQL Server">连接到SQL Server</a>
+					</dd>
+										<dd>
+						·<a target="_blank" href="javascript:if(confirm('https://www.yiibai.com/sqlserver/install-sql-server.html  \n\n??ļ????? Teleport Ultra ??, ?Ϊ ??һ???????????????Ϊ?????????ĵ????  \n\n????????????'))window.location='https://www.yiibai.com/sqlserver/install-sql-server.html'" tppabs="https://www.yiibai.com/sqlserver/install-sql-server.html" title="安装SQL Server">安装SQL Server</a>
+					</dd>
+										<dd>
+						·<a target="_blank" href="javascript:if(confirm('https://www.yiibai.com/sqlserver/what-is-sql-server.html  \n\n??ļ????? Teleport Ultra ??, ?Ϊ ??һ???????????????Ϊ?????????ĵ????  \n\n????????????'))window.location='https://www.yiibai.com/sqlserver/what-is-sql-server.html'" tppabs="https://www.yiibai.com/sqlserver/what-is-sql-server.html" title="SQL Server是什么？">SQL Server是什么？...</a>
+					</dd>
+										<dd>
+						·<a target="_blank" href="javascript:if(confirm('https://www.yiibai.com/sql/sql-check-constraint.html  \n\n??ļ????? Teleport Ultra ??, ?Ϊ ??һ???????????????Ϊ?????????ĵ????  \n\n????????????'))window.location='https://www.yiibai.com/sql/sql-check-constraint.html'" tppabs="https://www.yiibai.com/sql/sql-check-constraint.html" title="SQL检查约束">SQL检查约束</a>
+					</dd>
+										<dd>
+						·<a target="_blank" href="javascript:if(confirm('https://www.yiibai.com/sql/sql-not-null-constraint.html  \n\n??ļ????? Teleport Ultra ??, ?Ϊ ??һ???????????????Ϊ?????????ĵ????  \n\n????????????'))window.location='https://www.yiibai.com/sql/sql-not-null-constraint.html'" tppabs="https://www.yiibai.com/sql/sql-not-null-constraint.html" title="SQL Not Null约束">SQL Not Null约束</a>
+					</dd>
+										<dd>
+						·<a target="_blank" href="javascript:if(confirm('https://www.yiibai.com/sql/sql-unique-constraint.html  \n\n??ļ????? Teleport Ultra ??, ?Ϊ ??һ???????????????Ϊ?????????ĵ????  \n\n????????????'))window.location='https://www.yiibai.com/sql/sql-unique-constraint.html'" tppabs="https://www.yiibai.com/sql/sql-unique-constraint.html" title="SQL唯一约束">SQL唯一约束</a>
+					</dd>
+										<dd>
+						·<a target="_blank" href="javascript:if(confirm('https://www.yiibai.com/sql/sql-foreign-key.html  \n\n??ļ????? Teleport Ultra ??, ?Ϊ ??һ???????????????Ϊ?????????ĵ????  \n\n????????????'))window.location='https://www.yiibai.com/sql/sql-foreign-key.html'" tppabs="https://www.yiibai.com/sql/sql-foreign-key.html" title="SQL外键">SQL外键</a>
+					</dd>
+					
+				</dl>
+
+				<dl>
+
+					<dt>
+						站点信息
+					</dt>
+					<dd>
+						· <a target="_blank" href="javascript:if(confirm('http://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&email=IBcWGRcSGBYYE2BRUQ5DT00  \n\n??ļ????? Teleport Ultra ??, ?Ϊ ??һ???????????????Ϊ?????????ĵ????  \n\n????????????'))window.location='http://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&email=IBcWGRcSGBYYE2BRUQ5DT00'" tppabs="http://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&email=IBcWGRcSGBYYE2BRUQ5DT00" rel="external nofollow">意见反馈</a>
+					</dd>
+					<dd>
+						· <a target="_blank" href="javascript:if(confirm('https://www.yiibai.com/disclaimer.html  \n\n??ļ????? Teleport Ultra ??, ?Ϊ ??һ???????????????Ϊ?????????ĵ????  \n\n????????????'))window.location='https://www.yiibai.com/disclaimer.html'" tppabs="https://www.yiibai.com/disclaimer.html">免责声明</a>
+					</dd>
+					<dd>
+						· <a target="_blank" href="javascript:if(confirm('https://www.yiibai.com/about_us.html  \n\n??ļ????? Teleport Ultra ??, ?Ϊ ??һ???????????????Ϊ?????????ĵ????  \n\n????????????'))window.location='https://www.yiibai.com/about_us.html'" tppabs="https://www.yiibai.com/about_us.html">关于我们</a>
+					</dd>
+					<dd>
+						· <a target="_blank" href="javascript:if(confirm('https://www.yiibai.com/reward.html  \n\n??ļ????? Teleport Ultra ??, ?Ϊ ??һ???????????????Ϊ?????????ĵ????  \n\n????????????'))window.location='https://www.yiibai.com/reward.html#to-qcode'" tppabs="https://www.yiibai.com/reward.html#to-qcode">关于捐助</a>
+					</dd>
+					<dd>
+						· <a target="_blank" href="javascript:if(confirm('https://www.yiibai.com/siteinfo/download.html  \n\n??ļ????? Teleport Ultra ??, ?Ϊ ??һ???????????????Ϊ?????????ĵ????  \n\n????????????'))window.location='https://www.yiibai.com/siteinfo/download.html'" tppabs="https://www.yiibai.com/siteinfo/download.html" style="color:#e74851;">所有实例代码下载</a>
+					</dd>
+				</dl>
+
+				<dl>
+					<dt>
+						易百教程官方QQ群
+					</dt>
+					<dd>
+						JAVA技术：227270512
+					</dd>
+					<dd>
+						MySQL数据库：418407075
+					</dd>
+					<dd>
+						Python技术： 287904175
+					</dd>
+					<dd>
+						大数据开发： 655154550
+					</dd>
+					<dd>
+						Linux技术： 479429477
+					</dd>
+					<dd>
+						PHP/Web技术： 460153241
+					</dd>
+
+				</dl>
+
+				<div class="search-share">
+					<div class="app-download">
+						<div>
+							<strong>关注微信公众号</strong>
+						</div>
+					</div>
+					<div class="share">
+						<img width="150" height="150" src="../static/img/qrcode.jpg" tppabs="https://www.yiibai.com/static/img/qrcode.jpg">
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</footer>
+
+<div id="footer-copyright" style="width: 100%;float:left;text-align: center;">
+	Copyright &copy; 2012-2019<strong><a href="javascript:if(confirm('https://www.yiibai.com/  \n\n??ļ????? Teleport Ultra ??, ?Ϊ ??һ???????????????Ϊ?????????ĵ????  \n\n????????????'))window.location='https://www.yiibai.com/'" tppabs="https://www.yiibai.com/" target="_blank">易百教程</a></strong>&nbsp; <strong> 
+		<a href="javascript:if(confirm('https://www.yiibai.com/  \n\n??ļ????? Teleport Ultra ??, ?Ϊ ??һ???????????????Ϊ?????????ĵ????  \n\n????????????'))window.location='https://www.yiibai.com/'" tppabs="https://www.yiibai.com/" target="_blank">yiibai.com</a></strong> All Rights Reserved. 备案号：琼ICP备13001417号-3  联系QQ：769728683 &nbsp;&nbsp;
+
+	<script>
+		var _hmt = _hmt || [];
+		(function() {
+			var hm = document.createElement("script");
+			hm.src = "../../hm.baidu.com/hm.js-424e222704e2274e37a8169110e6e00a"/*tpa=https://hm.baidu.com/hm.js?424e222704e2274e37a8169110e6e00a*/;
+			var s = document.getElementsByTagName("script")[0];
+			s.parentNode.insertBefore(hm, s);
+		})();
+	</script>
+
+</div>
+
+<div class="fixed-btn">
+	<a class="to-top" onclick="backTop();" href="#backTop" title="返回顶部"> <i
+	class="fa fa-angle-up"></i></a>
+
+	<a class="qrcode"
+	href="javascript:;" title="关注我们"><i class="fa fa-qrcode"></i></a>
+
+	<a class="writer" target="_blank" href="javascript:if(confirm('http://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&email=IBcWGRcSGBYYE2BRUQ5DT00  \n\n??ļ????? Teleport Ultra ??, ?Ϊ ??һ???????????????Ϊ?????????ĵ????  \n\n????????????'))window.location='http://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&email=IBcWGRcSGBYYE2BRUQ5DT00'" tppabs="http://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&email=IBcWGRcSGBYYE2BRUQ5DT00" style="font-size: 12px;"
+	title="问题反馈"><i class="fa fa-envelope-o"
+	style="font-size: 20px;"></i></a>
+	<!-- qrcode modal -->
+
+	<div id="bottom-qrcode" class="modal fade in" style="display: none;">
+		<h4>微信关注</h4>
+		<div class="panel-body">
+			<img alt="微信关注" width="128" height="128"
+			src="../static/img/qrcode.jpg" tppabs="https://www.yiibai.com/static/img/qrcode.jpg">
+		</div>
+	</div>
+</div>
+
+<script src="../static/js/jquery.js" tppabs="https://www.yiibai.com/static/js/jquery.js"></script>
+<script src="../static/js/prism.js" tppabs="https://www.yiibai.com/static/js/prism.js"></script>
+<script src="../static/js/layer/layer.js" tppabs="https://www.yiibai.com/static/js/layer/layer.js"></script>
+<script src="../static/js/main.js-v=v5.0.1215" tppabs="https://www.yiibai.com/static/js/main.js?v=v5.0.1215"></script>
+<script>
+	$("#btn-reward").on('click', function() {
+		layer.open({
+			type : 2,
+			title : "请扫描以下二维码支付打赏",
+			area : ['56%', '70%'],
+			shade : 0.4,
+			closeBtn : 1,
+			shadeClose : true,
+			content : '../static/images/reward.png'/*tpa=https://www.yiibai.com/static/images/reward.png*/
+		});
+
+	}); 
+</script>
+
+	</body>
+	<script src="../static/js/main.js-v=v5.0.1215" tppabs="https://www.yiibai.com/static/js/main.js?v=v5.0.1215"></script>
+</html>

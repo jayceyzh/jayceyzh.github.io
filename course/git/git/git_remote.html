@@ -1,0 +1,801 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<meta charset=UTF-8"UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+	<title>
+		git remoteå‘½ä»¤ -
+		Gitæ•™ç¨‹&trade;</title>
+	<meta name="keywords" content="">
+	<meta name="description" content="git remoteå‘½ä»¤ç®¡ç†ä¸€ç»„è·Ÿè¸ªçš„å­˜å‚¨åº“ã€‚
+è¦å‚ä¸ä»»ä½•ä¸€ä¸ª Git é¡¹ç›®çš„åä½œï¼Œå¿…é¡»è¦äº†è§£è¯¥å¦‚ä½•ç®¡ç†è¿œç¨‹ä»“åº“ã€‚è¿œç¨‹ä»“åº“æ˜¯æŒ‡æ‰˜ç®¡åœ¨ç½‘ç»œä¸Šçš„é¡¹ç›®ä»“åº“ï¼Œå¯èƒ½">
+	<link rel="stylesheet" href="../static/css/fonts/font-awesome.min.css" tppabs="https://www.yiibai.com/static/css/fonts/font-awesome.min.css" media="all" />
+	<link rel="stylesheet" href="../static/layui/css/layui.css-v=v5.0.1215.css" tppabs="https://www.yiibai.com/static/layui/css/layui.css?v=v5.0.1215">
+	<link rel="stylesheet" href="../static/css/all.css-v=v5.0.1215.css" tppabs="https://www.yiibai.com/static/css/all.css?v=v5.0.1215" media="all">
+	<link rel="stylesheet" href="../static/css/prism.css-v=v5.0.1215.css" tppabs="https://www.yiibai.com/static/css/prism.css?v=v5.0.1215" media="all">
+	<!--[if lt IE 9]>
+		<script src="../../apps.bdimg.com/libs/html5shiv/3.7/html5shiv.min.js" tppabs="http://apps.bdimg.com/libs/html5shiv/3.7/html5shiv.min.js"></script>
+		<![endif]-->
+</head>
+<body class="page-home">
+	
+<header class="header">
+	<div class="container">
+		<h1 class="logo">
+			<a href="javascript:if(confirm('https://www.yiibai.com/  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓò»òÂ·¾¶Íâ²¿±»ÉèÖÃÎªËüµÄÆôÊ¼µØÖ·µÄµØÖ·¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='https://www.yiibai.com/'" tppabs="https://www.yiibai.com/" title="æ˜“ç™¾æ•™ç¨‹"><i
+				class="fa"></i>æ˜“ç™¾æ•™ç¨‹</a>
+				<a id="backTop" name="backTop" style="display:none;"></a>
+		</h1>
+		<div class="site-navbar">
+			<ul>
+				<li class="has-sub-menu"><a href="#">æ‰€æœ‰æ•™ç¨‹</a>
+					<div class="sub-menu">
+						<ul>
+							<li><a href="javascript:if(confirm('https://www.yiibai.com/html/java/  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓò»òÂ·¾¶Íâ²¿±»ÉèÖÃÎªËüµÄÆôÊ¼µØÖ·µÄµØÖ·¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='https://www.yiibai.com/html/java/'" tppabs="https://www.yiibai.com/html/java/">JavaæŠ€æœ¯</a></li>
+							<li><a href="javascript:if(confirm('https://www.yiibai.com/web/  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓò»òÂ·¾¶Íâ²¿±»ÉèÖÃÎªËüµÄÆôÊ¼µØÖ·µÄµØÖ·¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='https://www.yiibai.com/web/'" tppabs="https://www.yiibai.com/web/">WebæŠ€æœ¯</a></li>
+							<li><a href="javascript:if(confirm('https://www.yiibai.com/html/script/  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓò»òÂ·¾¶Íâ²¿±»ÉèÖÃÎªËüµÄÆôÊ¼µØÖ·µÄµØÖ·¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='https://www.yiibai.com/html/script/'" tppabs="https://www.yiibai.com/html/script/">è„šæœ¬è¯­è¨€</a></li>
+							<li><a href="javascript:if(confirm('https://www.yiibai.com/html/database/  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓò»òÂ·¾¶Íâ²¿±»ÉèÖÃÎªËüµÄÆôÊ¼µØÖ·µÄµØÖ·¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='https://www.yiibai.com/html/database/'" tppabs="https://www.yiibai.com/html/database/">æ•°æ®åº“</a></li>
+							<li><a href="javascript:if(confirm('https://www.yiibai.com/hightlang/  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓò»òÂ·¾¶Íâ²¿±»ÉèÖÃÎªËüµÄÆôÊ¼µØÖ·µÄµØÖ·¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='https://www.yiibai.com/hightlang/'" tppabs="https://www.yiibai.com/hightlang/">é«˜çº§è¯­è¨€</a></li>
+							<li><a href="javascript:if(confirm('https://www.yiibai.com/html/misc/  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓò»òÂ·¾¶Íâ²¿±»ÉèÖÃÎªËüµÄÆôÊ¼µØÖ·µÄµØÖ·¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='https://www.yiibai.com/html/misc/'" tppabs="https://www.yiibai.com/html/misc/">å…¶å®ƒæŠ€æœ¯</a></li>
+							<li><a href="javascript:if(confirm('https://www.yiibai.com/?app=all  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓò»òÂ·¾¶Íâ²¿±»ÉèÖÃÎªËüµÄÆôÊ¼µØÖ·µÄµØÖ·¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='https://www.yiibai.com/?app=all'" tppabs="https://www.yiibai.com/?app=all" style="font-weight:bold;color: #61B3E6;">æŸ¥çœ‹æ‰€æœ‰æ•™ç¨‹</a></li>
+						</ul>
+					</div>
+				</li>
+				<li class="has-sub-menu"><a href="javascript:void(0);">JavaæŠ€æœ¯</a>
+					<div class="sub-menu">
+						<ul>
+								<li>
+									<a href="javascript:if(confirm('https://www.yiibai.com/java/  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓò»òÂ·¾¶Íâ²¿±»ÉèÖÃÎªËüµÄÆôÊ¼µØÖ·µÄµØÖ·¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='https://www.yiibai.com/java/'" tppabs="https://www.yiibai.com/java/" target="_blank">Javaæ•™ç¨‹</a>
+								</li>
+								
+								<li>
+									<a href="javascript:if(confirm('https://www.yiibai.com/design_pattern/  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓò»òÂ·¾¶Íâ²¿±»ÉèÖÃÎªËüµÄÆôÊ¼µØÖ·µÄµØÖ·¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='https://www.yiibai.com/design_pattern/'" tppabs="https://www.yiibai.com/design_pattern/" target="_blank">Javaè®¾è®¡æ¨¡å¼</a>
+								</li>
+								<li>
+									<a href="javascript:if(confirm('https://www.yiibai.com/jsp/  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓò»òÂ·¾¶Íâ²¿±»ÉèÖÃÎªËüµÄÆôÊ¼µØÖ·µÄµØÖ·¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='https://www.yiibai.com/jsp/'" tppabs="https://www.yiibai.com/jsp/" target="_blank">JSPæ•™ç¨‹</a>
+								</li>
+
+								<li>
+									<a href="javascript:if(confirm('https://www.yiibai.com/jdbc/  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓò»òÂ·¾¶Íâ²¿±»ÉèÖÃÎªËüµÄÆôÊ¼µØÖ·µÄµØÖ·¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='https://www.yiibai.com/jdbc/'" tppabs="https://www.yiibai.com/jdbc/" target="_blank">JDBCæ•™ç¨‹</a>
+								</li>																																				
+							
+								<li>
+									<a href="javascript:if(confirm('https://www.yiibai.com/struts_2/  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓò»òÂ·¾¶Íâ²¿±»ÉèÖÃÎªËüµÄÆôÊ¼µØÖ·µÄµØÖ·¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='https://www.yiibai.com/struts_2/'" tppabs="https://www.yiibai.com/struts_2/" target="_blank">Struts2æ•™ç¨‹</a>
+								</li>
+							
+								<li>
+									<a href="javascript:if(confirm('https://www.yiibai.com/maven/  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓò»òÂ·¾¶Íâ²¿±»ÉèÖÃÎªËüµÄÆôÊ¼µØÖ·µÄµØÖ·¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='https://www.yiibai.com/maven/'" tppabs="https://www.yiibai.com/maven/" target="_blank">Mavenæ•™ç¨‹</a>
+								</li>
+							
+							
+								<li>
+									<a href="javascript:if(confirm('https://www.yiibai.com/javaexamples/  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓò»òÂ·¾¶Íâ²¿±»ÉèÖÃÎªËüµÄÆôÊ¼µØÖ·µÄµØÖ·¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='https://www.yiibai.com/javaexamples/'" tppabs="https://www.yiibai.com/javaexamples/" target="_blank">javaå®ä¾‹æ•™ç¨‹</a>
+								</li>
+
+								<li>
+									<a href="javascript:if(confirm('https://www.yiibai.com/mybatis/  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓò»òÂ·¾¶Íâ²¿±»ÉèÖÃÎªËüµÄÆôÊ¼µØÖ·µÄµØÖ·¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='https://www.yiibai.com/mybatis/'" tppabs="https://www.yiibai.com/mybatis/" target="_blank">MyBatisæ•™ç¨‹</a>
+								</li>
+
+								
+								<li>
+									<a href="javascript:if(confirm('https://www.yiibai.com/spring/  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓò»òÂ·¾¶Íâ²¿±»ÉèÖÃÎªËüµÄÆôÊ¼µØÖ·µÄµØÖ·¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='https://www.yiibai.com/spring/'" tppabs="https://www.yiibai.com/spring/" target="_blank">Springæ•™ç¨‹</a>
+								</li>
+								<li>
+									<a href="javascript:if(confirm('https://www.yiibai.com/spring_mvc/  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓò»òÂ·¾¶Íâ²¿±»ÉèÖÃÎªËüµÄÆôÊ¼µØÖ·µÄµØÖ·¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='https://www.yiibai.com/spring_mvc/'" tppabs="https://www.yiibai.com/spring_mvc/" target="_blank">Spring MVCæ•™ç¨‹</a>
+								</li>
+							
+								
+						</ul>
+					</div></li>
+				<li class="has-sub-menu"><a href="javascript:;">æ•°æ®åº“</a>
+					<div class="sub-menu">
+						<ul>
+							
+								<li>
+									<a href="javascript:if(confirm('https://www.yiibai.com/mysql/  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓò»òÂ·¾¶Íâ²¿±»ÉèÖÃÎªËüµÄÆôÊ¼µØÖ·µÄµØÖ·¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='https://www.yiibai.com/mysql/'" tppabs="https://www.yiibai.com/mysql/" target="_blank" title="MySQLæ•™ç¨‹">MySQLæ•™ç¨‹</a>
+								</li>
+								<li>
+									<a href="javascript:if(confirm('https://www.yiibai.com/postgresql/  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓò»òÂ·¾¶Íâ²¿±»ÉèÖÃÎªËüµÄÆôÊ¼µØÖ·µÄµØÖ·¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='https://www.yiibai.com/postgresql/'" tppabs="https://www.yiibai.com/postgresql/" target="_blank" title="PostgreSQLæ•™ç¨‹">PostgreSQLæ•™ç¨‹</a>
+								</li>
+							
+						</ul>
+					</div></li>
+					<li class="active"><a href="javascript:if(confirm('https://www.yiibai.com/geek/  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓò»òÂ·¾¶Íâ²¿±»ÉèÖÃÎªËüµÄÆôÊ¼µØÖ·µÄµØÖ·¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='https://www.yiibai.com/geek/'" tppabs="https://www.yiibai.com/geek/">æå®¢æ–‡ç« </a></li>
+					<li class="active"><a href="javascript:if(confirm('https://www.yiibai.com/code/  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓò»òÂ·¾¶Íâ²¿±»ÉèÖÃÎªËüµÄÆôÊ¼µØÖ·µÄµØÖ·¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='https://www.yiibai.com/code/'" tppabs="https://www.yiibai.com/code/">ç¤ºä¾‹ä»£ç </a></li>
+			</ul>
+		</div>
+		<div style="padding-top:4px;padding-bottom:4px;width:220px;float:left;margin-left:64px;line-height:22px;" id="search-form">
+		    <form action="https://www.yiibai.com/search" method="get">
+				<input type="text" id="kw" name="kw" style="border-radius:0px;float:left;width:134px;padding-left:6px; height: 28px;" value=""/>
+				<input type="submit" id="head-sumbit" style="float:left;font-size:14px;width:48px; height: 28px;" value="æœç´¢"/>
+			</form>
+		</div>
+
+		<div id="login-state" style="float:left;margin-top: 4px;">
+			
+		</div>
+		<div class="m-navbar-start">
+			<i class="fa">&#xe624;</i>
+		</div>
+		<div class="m-wel-start">
+			<i class="fa">&#xe632;</i>
+		</div>
+		<div class="m-mask"></div>
+	</div>
+</header>
+<nav id="header-nav" style="float:left;width:100%;display:none;"></nav>
+
+	<section class="container container-page clearfix" style="margin-top: 24px;">
+		<div class="pageside">
+			<div class="pagemenus">
+				<ul class="pagemenu">
+					<li class="navto-ads active">
+							
+							<a href="javascript:if(confirm('https://www.yiibai.com/git  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓò»òÂ·¾¶Íâ²¿±»ÉèÖÃÎªËüµÄÆôÊ¼µØÖ·µÄµØÖ·¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='https://www.yiibai.com/git'" tppabs="https://www.yiibai.com/git" style="float:left;line-height:32px;font-weight:bold;padding-bottom: 32px;padding-top: 12px;width: 100%;">
+
+							<i class="fa fa-list"></i>&nbsp;&nbsp;
+							Gitæ•™ç¨‹
+							</a>						
+					</li>
+					<!--// é»˜è®¤å·¦ä¾§æ–‡ç«  -->
+															<li style="">
+						<a href="git_basic_concepts.html" tppabs="https://www.yiibai.com/git/git_basic_concepts.html" title="GitåŸºç¡€æ¦‚å¿µ" style="">
+							GitåŸºç¡€æ¦‚å¿µ</a>
+					</li>
+																				<li style="">
+						<a href="getting-started-a-short-history-of-git.html" tppabs="https://www.yiibai.com/git/getting-started-a-short-history-of-git.html" title="Gitå†å²ï¼ˆç®€å²ï¼‰" style="">
+							Gitå†å²ï¼ˆç®€å²ï¼‰</a>
+					</li>
+																				<li style="">
+						<a href="getting-started-git-basics.html" tppabs="https://www.yiibai.com/git/getting-started-git-basics.html" title="GitåŸºç¡€å’ŒåŸç†" style="">
+							GitåŸºç¡€å’ŒåŸç†</a>
+					</li>
+																				<li style="">
+						<a href="git_environment.html" tppabs="https://www.yiibai.com/git/git_environment.html" title="Gitå®‰è£…è®¾ç½®" style="">
+							Gitå®‰è£…è®¾ç½®</a>
+					</li>
+																				<li style="">
+						<a href="getting-started-first-time-git-setup.html" tppabs="https://www.yiibai.com/git/getting-started-first-time-git-setup.html" title="Gitä½¿ç”¨å‰é…ç½®" style="">
+							Gitä½¿ç”¨å‰é…ç½®</a>
+					</li>
+																				<li style="">
+						<a href="git-quick-start.html" tppabs="https://www.yiibai.com/git/git-quick-start.html" title="Gitå¿«é€Ÿå…¥é—¨" style="">
+							Gitå¿«é€Ÿå…¥é—¨</a>
+					</li>
+																				<li style="">
+						<a href="git_life_cycle.html" tppabs="https://www.yiibai.com/git/git_life_cycle.html" title="Gitå·¥ä½œæµç¨‹" style="">
+							Gitå·¥ä½œæµç¨‹</a>
+					</li>
+																				<li style="">
+						<a href="git_create_repository.html" tppabs="https://www.yiibai.com/git/git_create_repository.html" title="Gitåˆ›å»ºå­˜å‚¨åº“" style="">
+							Gitåˆ›å»ºå­˜å‚¨åº“</a>
+					</li>
+																				<li style="">
+						<a href="git_clone_operation.html" tppabs="https://www.yiibai.com/git/git_clone_operation.html" title="Gitå…‹éš†æ“ä½œ" style="">
+							Gitå…‹éš†æ“ä½œ</a>
+					</li>
+																				<li style="">
+						<a href="git_perform_changes.html" tppabs="https://www.yiibai.com/git/git_perform_changes.html" title="Gitæ‰§è¡Œå˜æ›´æ“ä½œ" style="">
+							Gitæ‰§è¡Œå˜æ›´æ“ä½œ</a>
+					</li>
+																				<li style="">
+						<a href="git_review_changes.html" tppabs="https://www.yiibai.com/git/git_review_changes.html" title="GitæŸ¥çœ‹æ›´æ”¹" style="">
+							GitæŸ¥çœ‹æ›´æ”¹</a>
+					</li>
+																				<li style="">
+						<a href="git_commit_changes.html" tppabs="https://www.yiibai.com/git/git_commit_changes.html" title="Gitæäº¤æ›´æ”¹" style="">
+							Gitæäº¤æ›´æ”¹</a>
+					</li>
+																				<li style="">
+						<a href="git_push_operation.html" tppabs="https://www.yiibai.com/git/git_push_operation.html" title="Gitæ¨é€ï¼ˆpushï¼‰æ“ä½œ" style="">
+							Gitæ¨é€ï¼ˆpushï¼‰æ“ä½œ</a>
+					</li>
+																				<li style="">
+						<a href="git_update_operation.html" tppabs="https://www.yiibai.com/git/git_update_operation.html" title="Gitæ›´æ–°æ“ä½œ" style="">
+							Gitæ›´æ–°æ“ä½œ</a>
+					</li>
+																				<li style="">
+						<a href="git_stash_operation.html" tppabs="https://www.yiibai.com/git/git_stash_operation.html" title="Gitéšè—(Stash)æ“ä½œ" style="">
+							Gitéšè—(Stash)æ“ä½œ</a>
+					</li>
+																				<li style="">
+						<a href="git_move_operation.html" tppabs="https://www.yiibai.com/git/git_move_operation.html" title="Gitç§»åŠ¨æ“ä½œ" style="">
+							Gitç§»åŠ¨æ“ä½œ</a>
+					</li>
+																				<li style="">
+						<a href="git_rename_operation.html" tppabs="https://www.yiibai.com/git/git_rename_operation.html" title="Gité‡å‘½åæ“ä½œ" style="">
+							Gité‡å‘½åæ“ä½œ</a>
+					</li>
+																				<li style="">
+						<a href="git_delete_operation.html" tppabs="https://www.yiibai.com/git/git_delete_operation.html" title="Gitåˆ é™¤æ“ä½œ" style="">
+							Gitåˆ é™¤æ“ä½œ</a>
+					</li>
+																				<li style="">
+						<a href="git_fix_mistakes.html" tppabs="https://www.yiibai.com/git/git_fix_mistakes.html" title="Gitä¿®æ­£é”™è¯¯" style="">
+							Gitä¿®æ­£é”™è¯¯</a>
+					</li>
+																				<li style="">
+						<a href="git_tag_operation.html" tppabs="https://www.yiibai.com/git/git_tag_operation.html" title="Gitæ ‡ç­¾æ“ä½œ" style="">
+							Gitæ ‡ç­¾æ“ä½œ</a>
+					</li>
+																				<li style="">
+						<a href="git_patch_operation.html" tppabs="https://www.yiibai.com/git/git_patch_operation.html" title="Gitè¡¥ä¸æ“ä½œ" style="">
+							Gitè¡¥ä¸æ“ä½œ</a>
+					</li>
+																				<li style="">
+						<a href="git_managing_branches.html" tppabs="https://www.yiibai.com/git/git_managing_branches.html" title="Gitç®¡ç†åˆ†æ”¯" style="">
+							Gitç®¡ç†åˆ†æ”¯</a>
+					</li>
+																				<li style="">
+						<a href="git_handling_conflicts.html" tppabs="https://www.yiibai.com/git/git_handling_conflicts.html" title="Gitå¤„ç†å†²çª" style="">
+							Gitå¤„ç†å†²çª</a>
+					</li>
+																				<li style="">
+						<a href="git_different_platforms.html" tppabs="https://www.yiibai.com/git/git_different_platforms.html" title="Gitä¸åŒå¹³å°æ¢è¡Œç¬¦é—®é¢˜" style="">
+							Gitä¸åŒå¹³å°æ¢è¡Œç¬¦é—®é¢˜</a>
+					</li>
+																				<li style="">
+						<a href="git_remote_operate.html" tppabs="https://www.yiibai.com/git/git_remote_operate.html" title="Gitè¿œç¨‹æ“ä½œè¯¦è§£" style="">
+							Gitè¿œç¨‹æ“ä½œè¯¦è§£</a>
+					</li>
+										
+
+					<!--// æœ‰æ ‡ç­¾çš„æ–‡ç«  -->
+										<li style="font-size:16px;font-weight:bold;color:#666;"><a style="background-color: #f8f9f9;cursor:text;font-size:16px;color: #666;">Gitå¸¸ç”¨å‘½ä»¤</a></li>
+															<li style="">
+						<a href="git_config.html" tppabs="https://www.yiibai.com/git/git_config.html" title="git configå‘½ä»¤" style="">
+							git configå‘½ä»¤</a>
+					</li>
+																				<li style="">
+						<a href="git_help.html" tppabs="https://www.yiibai.com/git/git_help.html" title="git helpå‘½ä»¤" style="">
+							git helpå‘½ä»¤</a>
+					</li>
+																				<li style="">
+						<a href="git_init.html" tppabs="https://www.yiibai.com/git/git_init.html" title="git initå‘½ä»¤" style="">
+							git initå‘½ä»¤</a>
+					</li>
+																				<li style="">
+						<a href="git_add.html" tppabs="https://www.yiibai.com/git/git_add.html" title="git addå‘½ä»¤" style="">
+							git addå‘½ä»¤</a>
+					</li>
+																				<li style="">
+						<a href="git_clone.html" tppabs="https://www.yiibai.com/git/git_clone.html" title="git cloneå‘½ä»¤" style="">
+							git cloneå‘½ä»¤</a>
+					</li>
+																				<li style="">
+						<a href="git_status.html" tppabs="https://www.yiibai.com/git/git_status.html" title="git statuså‘½ä»¤" style="">
+							git statuså‘½ä»¤</a>
+					</li>
+																				<li style="">
+						<a href="git_diff.html" tppabs="https://www.yiibai.com/git/git_diff.html" title="git diffå‘½ä»¤" style="">
+							git diffå‘½ä»¤</a>
+					</li>
+																				<li style="">
+						<a href="git_commit.html" tppabs="https://www.yiibai.com/git/git_commit.html" title="git commitå‘½ä»¤" style="">
+							git commitå‘½ä»¤</a>
+					</li>
+																				<li style="">
+						<a href="git_reset.html" tppabs="https://www.yiibai.com/git/git_reset.html" title="git resetå‘½ä»¤" style="">
+							git resetå‘½ä»¤</a>
+					</li>
+																				<li style="">
+						<a href="git_rm.html" tppabs="https://www.yiibai.com/git/git_rm.html" title="git rmå‘½ä»¤" style="">
+							git rmå‘½ä»¤</a>
+					</li>
+																				<li style="">
+						<a href="git_mv.html" tppabs="https://www.yiibai.com/git/git_mv.html" title="git mvå‘½ä»¤" style="">
+							git mvå‘½ä»¤</a>
+					</li>
+																				<li style="">
+						<a href="git_branch.html" tppabs="https://www.yiibai.com/git/git_branch.html" title="git branchå‘½ä»¤" style="">
+							git branchå‘½ä»¤</a>
+					</li>
+																				<li style="">
+						<a href="git_checkout.html" tppabs="https://www.yiibai.com/git/git_checkout.html" title="git checkoutå‘½ä»¤" style="">
+							git checkoutå‘½ä»¤</a>
+					</li>
+																				<li style="">
+						<a href="git_merge.html" tppabs="https://www.yiibai.com/git/git_merge.html" title="git mergeå‘½ä»¤" style="">
+							git mergeå‘½ä»¤</a>
+					</li>
+																				<li style="">
+						<a href="git_mergetool.html" tppabs="https://www.yiibai.com/git/git_mergetool.html" title="git mergetoolå‘½ä»¤" style="">
+							git mergetoolå‘½ä»¤</a>
+					</li>
+																				<li style="">
+						<a href="git_log.html" tppabs="https://www.yiibai.com/git/git_log.html" title="git logå‘½ä»¤" style="">
+							git logå‘½ä»¤</a>
+					</li>
+																				<li style="">
+						<a href="git_stash.html" tppabs="https://www.yiibai.com/git/git_stash.html" title="git stashå‘½ä»¤" style="">
+							git stashå‘½ä»¤</a>
+					</li>
+																				<li style="">
+						<a href="git_tag.html" tppabs="https://www.yiibai.com/git/git_tag.html" title="git tagå‘½ä»¤" style="">
+							git tagå‘½ä»¤</a>
+					</li>
+																				<li style="">
+						<a href="git_fetch.html" tppabs="https://www.yiibai.com/git/git_fetch.html" title="git fetchå‘½ä»¤" style="">
+							git fetchå‘½ä»¤</a>
+					</li>
+																				<li style="">
+						<a href="git_pull.html" tppabs="https://www.yiibai.com/git/git_pull.html" title="git pullå‘½ä»¤" style="">
+							git pullå‘½ä»¤</a>
+					</li>
+																				<li style="">
+						<a href="git_push.html" tppabs="https://www.yiibai.com/git/git_push.html" title="git pushå‘½ä»¤" style="">
+							git pushå‘½ä»¤</a>
+					</li>
+																				<li style="border-left: 6px solid #2e82ff;font-weight: bold;">
+						<a href="#" title="å½“å‰é˜…è¯»çš„æ–‡ç« " style="cursor:text;background-color: #f5f2f0;">
+							git remoteå‘½ä»¤</a>
+					</li>
+																				<li style="">
+						<a href="git_submodule.html" tppabs="https://www.yiibai.com/git/git_submodule.html" title="git submoduleå‘½ä»¤" style="">
+							git submoduleå‘½ä»¤</a>
+					</li>
+																				<li style="">
+						<a href="git_show.html" tppabs="https://www.yiibai.com/git/git_show.html" title="git showå‘½ä»¤" style="">
+							git showå‘½ä»¤</a>
+					</li>
+																				<li style="">
+						<a href="git_shortlog.html" tppabs="https://www.yiibai.com/git/git_shortlog.html" title="git shortlogå‘½ä»¤" style="">
+							git shortlogå‘½ä»¤</a>
+					</li>
+																				<li style="">
+						<a href="git_describe.html" tppabs="https://www.yiibai.com/git/git_describe.html" title="git describeå‘½ä»¤" style="">
+							git describeå‘½ä»¤</a>
+					</li>
+																				<li style="">
+						<a href="git_rebase.html" tppabs="https://www.yiibai.com/git/git_rebase.html" title="git rebaseå‘½ä»¤" style="">
+							git rebaseå‘½ä»¤</a>
+					</li>
+										
+					
+				</ul>
+
+			</div>
+		</div>
+
+		<div class="content" id="navs">
+
+			<header class="article-header">
+				<h1 class="article-title" style="text-align:center;">
+					git remoteå‘½ä»¤
+				</h1>
+				<div class="article-meta" style="margin-top:20px;font-size:14px;">
+
+					<span class="item" style="margin-left:20px;">ä½œè€…ï¼š
+						åˆç”Ÿä¸æƒ‘</span>
+					<span style="font-weight:bold;margin-left:24px;" id="qq-group">JavaæŠ€æœ¯QQç¾¤ï¼š227270512 / Linux QQç¾¤ï¼š479429477</span>
+				</div>
+			</header>
+			<!--// article body -->
+			<article>
+				<a name="article-start" id="article-start"></a>
+
+				<div style="padding-top: 6px;padding-bottom: 4px;float:left;width:100%;">
+					<script async src="../../pagead2.googlesyndication.com/pagead/js/adsbygoogle.js" tppabs="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+					<!-- é¡¶éƒ¨_720x90 -->
+					<ins class="adsbygoogle" style="display:inline-block;width:728px;height:90px" data-ad-client="ca-pub-1090193214637198" data-ad-slot="9805510053"></ins>
+					<script>
+						( adsbygoogle = window.adsbygoogle || []).push({});
+						</script>
+				</div>
+
+				<div style="float:left;width:100%;heigh:30px;padding-bottom:10px;padding-top:3px;" id="adv-javalive">
+					<a href="javascript:if(confirm('https://www.linuxprobe.com/chapter-01.html  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓò»òÂ·¾¶Íâ²¿±»ÉèÖÃÎªËüµÄÆôÊ¼µØÖ·µÄµØÖ·¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='https://www.linuxprobe.com/chapter-01.html'" tppabs="https://www.linuxprobe.com/chapter-01.html" title="linuxprobe" target="_blank"><img src="../static/images/adv/linuxprobe.jpg" tppabs="https://www.yiibai.com/static/images/adv/linuxprobe.jpg" alt="linuxprobe" style="width:100%;heigh:30px;" /> </a>
+				</div>
+
+				<div style="width:100%;float:left;" class="article-content">
+
+					<input type="hidden" name="article_id" id="article_id" value="10960" />
+					<input type="hidden" name="catid" id="catid" value="0" />
+
+					<p><code>git remote</code>å‘½ä»¤ç®¡ç†ä¸€ç»„è·Ÿè¸ªçš„å­˜å‚¨åº“ã€‚</p>
+<p>è¦å‚ä¸ä»»ä½•ä¸€ä¸ª Git é¡¹ç›®çš„åä½œï¼Œå¿…é¡»è¦äº†è§£è¯¥å¦‚ä½•ç®¡ç†è¿œç¨‹ä»“åº“ã€‚è¿œç¨‹ä»“åº“æ˜¯æŒ‡æ‰˜ç®¡åœ¨ç½‘ç»œä¸Šçš„é¡¹ç›®ä»“åº“ï¼Œå¯èƒ½ä¼šæœ‰å¥½å¤šä¸ªï¼Œå…¶ä¸­æœ‰äº›ä½ åªèƒ½è¯»ï¼Œå¦å¤–æœ‰äº›å¯ä»¥å†™ã€‚åŒä»–äººåä½œå¼€å‘æŸ ä¸ªé¡¹ç›®æ—¶ï¼Œéœ€è¦ç®¡ç†è¿™äº›è¿œç¨‹ä»“åº“ï¼Œä»¥ä¾¿æ¨é€æˆ–æ‹‰å–æ•°æ®ï¼Œåˆ†äº«å„è‡ªçš„å·¥ä½œè¿›å±•ã€‚ç®¡ç†è¿œç¨‹ä»“åº“çš„å·¥ä½œï¼ŒåŒ…æ‹¬æ·»åŠ è¿œç¨‹åº“ï¼Œç§»é™¤åºŸå¼ƒçš„è¿œç¨‹åº“ï¼Œç®¡ç†å„å¼è¿œç¨‹åº“åˆ†æ”¯ï¼Œå®šä¹‰æ˜¯å¦è·Ÿè¸ªè¿™äº›åˆ†æ”¯ç­‰ç­‰ã€‚</p>
+<p><strong>ä½¿ç”¨è¯­æ³•</strong></p>
+<pre><code class="lang-shell">git remote [-v | --verbose]
+git remote add [-t &lt;branch&gt;] [-m &lt;master&gt;] [-f] [--[no-]tags] [--mirror=&lt;fetch|push&gt;] &lt;name&gt; &lt;url&gt;
+git remote rename &lt;old&gt; &lt;new&gt;
+git remote remove &lt;name&gt;
+git remote set-head &lt;name&gt; (-a | --auto | -d | --delete | &lt;branch&gt;)
+git remote set-branches [--add] &lt;name&gt; &lt;branch&gt;â€¦â€‹
+git remote get-url [--push] [--all] &lt;name&gt;
+git remote set-url [--push] &lt;name&gt; &lt;newurl&gt; [&lt;oldurl&gt;]
+git remote set-url --add [--push] &lt;name&gt; &lt;newurl&gt;
+git remote set-url --delete [--push] &lt;name&gt; &lt;url&gt;
+git remote [-v | --verbose] show [-n] &lt;name&gt;â€¦â€‹
+git remote prune [-n | --dry-run] &lt;name&gt;â€¦â€‹
+git remote [-v | --verbose] update [-p | --prune] [(&lt;group&gt; | &lt;remote&gt;)â€¦â€‹]
+</code></pre>
+<h2 id="h2-u63CFu8FF0"><a name="æè¿°" class="reference-link"></a><span class="header-link octicon octicon-link"></span>æè¿°</h2><p><code>git remote</code>å‘½ä»¤ç®¡ç†ä¸€ç»„è·Ÿè¸ªçš„å­˜å‚¨åº“ã€‚</p>
+<h2 id="h2-u793Au4F8B"><a name="ç¤ºä¾‹" class="reference-link"></a><span class="header-link octicon octicon-link"></span>ç¤ºä¾‹</h2><p>ä»¥ä¸‹æ˜¯ä¸€äº›ç¤ºä¾‹ -</p>
+<p><strong>1.æŸ¥çœ‹å½“å‰çš„è¿œç¨‹åº“</strong></p>
+<p>è¦æŸ¥çœ‹å½“å‰é…ç½®æœ‰å“ªäº›è¿œç¨‹ä»“åº“,å¯ä»¥ç”¨ <code>git remote</code> å‘½ä»¤,å®ƒä¼šåˆ—å‡ºæ¯ä¸ªè¿œç¨‹åº“çš„ç®€çŸ­åå­—.åœ¨å…‹éš†å®ŒæŸä¸ªé¡¹ç›®å,è‡³å°‘å¯ä»¥çœ‹åˆ°ä¸€ä¸ªåä¸º <code>origin</code> çš„è¿œç¨‹åº“, git é»˜è®¤ä½¿ç”¨è¿™ä¸ªåå­—æ¥æ ‡è¯†ä½ æ‰€å…‹éš†çš„åŸå§‹ä»“åº“:</p>
+<pre><code class="lang-shell">$ git clone http://git.oschina.net/yiibai/sample.git
+$ cd sample
+</code></pre>
+<p>(1)<code>git remote</code> ä¸å¸¦å‚æ•°ï¼Œåˆ—å‡ºå·²ç»å­˜åœ¨çš„è¿œç¨‹åˆ†æ”¯</p>
+<pre><code class="lang-shell">$ git remote
+origin
+</code></pre>
+<p>2)<code>git remote -v | --verbose</code> åˆ—å‡ºè¯¦ç»†ä¿¡æ¯ï¼Œåœ¨æ¯ä¸€ä¸ªåå­—åé¢åˆ—å‡ºå…¶è¿œç¨‹url<br>æ­¤æ—¶ï¼Œ <code>-v</code> é€‰é¡¹(è¯‘æ³¨:æ­¤ä¸º <code>â€“verbose</code> çš„ç®€å†™,å–é¦–å­—æ¯),æ˜¾ç¤ºå¯¹åº”çš„å…‹éš†åœ°å€:</p>
+<pre><code class="lang-shell">$ git remote -v
+origin  http://git.oschina.net/yiibai/sample.git (fetch)
+origin  http://git.oschina.net/yiibai/sample.git (push)
+
+Administrator@MY-PC /D/worksp/sample (master)
+$ git remote --verbose
+origin  http://git.oschina.net/yiibai/sample.git (fetch)
+origin  http://git.oschina.net/yiibai/sample.git (push)
+</code></pre>
+<p><strong>2.æ·»åŠ ä¸€ä¸ªæ–°çš„è¿œç¨‹ï¼ŒæŠ“å–ï¼Œå¹¶ä»å®ƒæ£€å‡ºä¸€ä¸ªåˆ†æ”¯ - </strong></p>
+<pre><code class="lang-shell">$ git remote
+origin
+$ git branch -r
+  origin/HEAD -&gt; origin/master
+  origin/master
+$ git remote add staging git://git.kernel.org/.../gregkh/staging.git
+$ git remote
+origin
+staging
+$ git fetch staging
+...
+From git://git.kernel.org/pub/scm/linux/kernel/git/gregkh/staging
+ * [new branch]      master     -&gt; staging/master
+ * [new branch]      staging-linus -&gt; staging/staging-linus
+ * [new branch]      staging-next -&gt; staging/staging-next
+$ git branch -r
+  origin/HEAD -&gt; origin/master
+  origin/master
+  staging/master
+  staging/staging-linus
+  staging/staging-next
+$ git checkout -b staging staging/master
+...
+</code></pre>
+<p><strong>3.æ·»åŠ è¿œç¨‹ä»“åº“</strong></p>
+<p>è¦æ·»åŠ ä¸€ä¸ªæ–°çš„è¿œç¨‹ä»“åº“,å¯ä»¥æŒ‡å®šä¸€ä¸ªç®€å•çš„åå­—,ä»¥ä¾¿å°†æ¥å¼•ç”¨,è¿è¡Œ <code>git remote add [shortname] [url]</code>:</p>
+<pre><code class="lang-shell">$ git remote
+ã€€ã€€origin
+$ git remote add pb http://git.oschina.net/yiibai/sample.git
+$ git remote -v origin http://git.oschina.net/yiibai/sample.git
+ã€€ã€€pb http://git.oschina.net/yiibai/sample2.git ç°åœ¨å¯ä»¥ç”¨å­—ä¸² pb æŒ‡ä»£å¯¹åº”çš„ä»“åº“åœ°å€äº†.æ¯”å¦‚è¯´,è¦æŠ“å–æ‰€æœ‰ Paul æœ‰çš„,ä½†æœ¬åœ°ä»“åº“æ²¡æœ‰çš„ä¿¡æ¯,å¯ä»¥è¿è¡Œ git fetch pb:
+
+$ git fetch pb
+ã€€ã€€remote: Counting objects: 58, done.
+ã€€ã€€remote: Compressing objects: 100% (41/41), done.
+ã€€ã€€remote: Total 44 (delta 24), reused 1 (delta 0)
+ã€€ã€€Unpacking objects: 100% (44/44), done.
+ã€€ã€€From http://git.oschina.net/yiibai/sample2.git
+ã€€ã€€* [new branch] master -&gt; pb/master
+ã€€ã€€* [new branch] ticgit -&gt; pb/ticgit
+</code></pre>
+<p><strong>4.æ¨¡ä»¿  git cloneï¼Œä½†åªè·Ÿè¸ªé€‰å®šçš„åˆ†æ”¯</strong></p>
+<pre><code class="lang-shell">$ mkdir project.git
+$ cd project.git
+$ git init
+$ git remote add -f -t master -m master origin git://example.com/git.git/
+$ git merge origin
+</code></pre>
+
+					<br />
+					<p style="text-align:center;float:left;width:100%;margin-top:24px;margin-bottom:48px;">
+							<button class="layui-btn layui-btn-danger" id="btn-reward"> Â¥ æˆ‘è¦æ‰“èµ </button>&nbsp;&nbsp;
+							<button class="btn" id="article-correction" data-url="https://www.yiibai.com/article/correction/10960">
+									<i class="layui-icon layui-icon-edit" style="color: #1E9FFF;"></i> æ•™ç¨‹çº é”™
+								</button>
+					</p>
+
+					<p>
+						<b style="color:#f57e42;">æ˜“ç™¾æ•™ç¨‹ç§»åŠ¨ç«¯</b>ï¼šè¯·æ‰«ææœ¬é¡µé¢åº•éƒ¨(å³ä¾§)äºŒç»´ç å¹¶å…³æ³¨å¾®ä¿¡å…¬ä¼—å·ï¼Œå›å¤ï¼š"<b>æ•™ç¨‹</b>" é€‰æ‹©ç›¸å…³æ•™ç¨‹é˜…è¯»æˆ–ç›´æ¥è®¿é—®ï¼šhttp://m.yiibai.com ã€‚
+					</p>
+
+					<div style="width:100%;margin-bottom: 16px; height: 32px;margin-top:18px;float:left;">
+
+						<span style="float:left;">ä¸Šä¸€ç¯‡ï¼š<a href="git_push.html#article-start" tppabs="https://www.yiibai.com/git/git_push.html#article-start" title="git pushå‘½ä»¤"><i class="layui-icon"></i>
+								git pushå‘½ä»¤</a></span>
+												<span style="float:right;">ä¸‹ä¸€ç¯‡ï¼š<a href="git_submodule.html#article-start" tppabs="https://www.yiibai.com/git/git_submodule.html#article-start" style="float:right;" title="ä¸‹ä¸€ç¯‡ï¼šgit submoduleå‘½ä»¤"><i class="layui-icon"></i>
+								git submoduleå‘½ä»¤</a></span>
+												<div id="googlead" style="float:left;margin-top:8px;">
+							<script async src="../../pagead2.googlesyndication.com/pagead/js/adsbygoogle.js" tppabs="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+							<!-- yiibaiä¸‹æ–¹ -->
+							<ins class="adsbygoogle" style="display:inline-block;width:728px;height:90px" data-ad-client="ca-pub-1090193214637198" data-ad-slot="6494738921"></ins>
+							<script>
+								(adsbygoogle = window.adsbygoogle || []).push({});
+							</script>
+						</div>
+					</div>
+
+					<div style="width:100%;margin-top:18px;float:left;">
+
+	<h4 style="color: #f57e42;padding-top:6px;padding-bottom: 4px;float: left;width: 100%;margin-bottom:12px;">åŠ QQç¾¤å•¦ï¼Œæ˜“ç™¾æ•™ç¨‹å®˜æ–¹æŠ€æœ¯å­¦ä¹ ç¾¤</h4>
+	<blockquote style="width:100%;float:left;margin-bottom:6px;padding-bottom:4px;">
+		æ³¨æ„ï¼šå»ºè®®æ¯ä¸ªäººé€‰è‡ªå·±çš„æŠ€æœ¯æ–¹å‘åŠ ç¾¤ï¼ŒåŒä¸€ä¸ªQQæœ€å¤šé™åŠ  3 ä¸ªç¾¤ã€‚
+	</blockquote>
+	<ul style="width:100%;float:left;">
+		<li>
+			<b>JavaæŠ€æœ¯ç¾¤ï¼š</b> 227270512 ï¼ˆäººæ•°ï¼š3000ï¼Œå…è´¹ï¼šå¦ï¼‰
+		</li>
+		<li>
+			<b>Goå¼€å‘è€…ç¾¤ï¼ˆæ–°ï¼‰ï¼š</b> 851549018 ï¼ˆäººæ•°ï¼š1000ï¼Œ<span style="color:red;">å…è´¹</span>ï¼‰
+		</li>
+		<li>
+			<b>PHPå¼€å‘è€…ç¾¤ï¼š</b> 460153241 ï¼ˆäººæ•°ï¼š2000ï¼Œ<span style="color:red;">å…è´¹</span>ï¼‰
+		</li>
+		<li>
+			<b>MySQL/SQLç¾¤ï¼š</b> 418407075 ï¼ˆäººæ•°ï¼š2000ï¼Œå…è´¹ï¼šå¦ï¼‰
+		</li>
+		<li>
+			<b>å¤§æ•°æ®å¼€å‘ç¾¤ï¼š</b> 655154550 ï¼ˆäººæ•°ï¼š2000ï¼Œå…è´¹ï¼šå¦ï¼‰
+		</li>
+		<li>
+			<b>PythonæŠ€æœ¯ç¾¤ï¼š</b> 287904175 ï¼ˆäººæ•°ï¼š2000ï¼Œå…è´¹ï¼šå¦ï¼‰
+		</li>
+		<li>
+			<b>äººå·¥æ™ºèƒ½æ·±åº¦å­¦ä¹ ï¼š</b> 456236082 ï¼ˆäººæ•°ï¼š2000ï¼Œå…è´¹ï¼šå¦ï¼‰
+		</li>
+		<li>
+			<b>æµ‹è¯•å·¥ç¨‹å¸ˆç¾¤ï¼š</b> 415553199 ï¼ˆäººæ•°ï¼š2000ï¼Œå…è´¹ï¼šå¦ï¼‰
+		</li>
+		<li>
+			<b>å‰ç«¯å¼€å‘è€…ç¾¤ï¼š</b> 410430016 ï¼ˆäººæ•°ï¼š2000ï¼Œå…è´¹ï¼šå¦ï¼‰
+		</li>
+		<li>
+			<b>C/C++æŠ€æœ¯ç¾¤(æ–°)ï¼š</b> 629264796 ï¼ˆäººæ•°ï¼š2000ï¼Œ<span style="color:red;">å…è´¹</span>ï¼‰
+		</li>
+		<li>
+			<b>Node.jsæŠ€æœ¯ç¾¤(æ–°)ï¼š</b> 621549808 ï¼ˆäººæ•°ï¼š2000ï¼Œ<span style="color:red;">å…è´¹</span>ï¼‰
+		</li>
+		<li>
+			<b>PostgreSQLæ•°æ®åº“ç¾¤ï¼š</b> 539504187 ï¼ˆäººæ•°ï¼š1000ï¼Œ<span style="color:red;">å…è´¹</span>ï¼‰
+		</li>
+		<li>
+			<b>Linuxè¿ç»´æŠ€æœ¯ç¾¤ï¼š</b> 479429477 ï¼ˆäººæ•°ï¼š2000ï¼Œå…è´¹ï¼šå¦ï¼‰
+		</li>
+		
+		<li>
+			<b>Oracleæ•°æ®åº“ï¼š</b> 175248146 ï¼ˆäººæ•°ï¼š2000ï¼Œå…è´¹ï¼šå¦ï¼‰
+		</li>
+		<li>
+			<b>C#/ASP.Netå¼€å‘è€…ï¼š</b> 579821706 ï¼ˆäººæ•°ï¼š2000ï¼Œ<span style="color:red;">å…è´¹</span>ï¼‰
+		</li>
+		<li>
+			<b>æ•°æ®åˆ†æå¸ˆç¾¤ï¼š</b> 397883996 ï¼ˆäººæ•°ï¼š2000ï¼Œå…è´¹ï¼šå¦ï¼‰
+		</li>
+	</ul>
+</div>
+				</div>
+
+				<!--// google adv -->
+				<div style="width:100%;float:left;">
+					<script async src="../../pagead2.googlesyndication.com/pagead/js/adsbygoogle.js" tppabs="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+					<ins class="adsbygoogle" style="display:block" data-ad-format="autorelaxed" data-ad-client="ca-pub-1090193214637198" data-ad-slot="1254304051"></ins>
+					<script>
+						(adsbygoogle = window.adsbygoogle || []).push({});
+					</script>
+				</div>
+
+			</article>
+		</div>
+		<!--//end content-->
+
+		<div class="page-right">
+
+			<div class="item" style="height:260px;">
+
+				<script async src="../../pagead2.googlesyndication.com/pagead/js/adsbygoogle.js" tppabs="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+				<!-- GoogleAdv-300x250 -->
+				<ins class="adsbygoogle" style="display:inline-block;width:300px;height:250px" data-ad-client="ca-pub-1090193214637198" data-ad-slot="9485766451"></ins>
+				<script>
+					(adsbygoogle = window.adsbygoogle || []).push({});
+				</script>
+
+			</div>
+
+			<div class="item" style="height:610px;">
+
+				<script async src="../../pagead2.googlesyndication.com/pagead/js/adsbygoogle.js" tppabs="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+				<!-- Right-300x600 -->
+				<ins class="adsbygoogle" style="display:inline-block;width:300px;height:600px" data-ad-client="ca-pub-1090193214637198" data-ad-slot="9448740452"></ins>
+				<script>
+					(adsbygoogle = window.adsbygoogle || []).push({});
+				</script>
+			</div>
+			
+		</div>
+		<!--//end page-right -->
+
+	</section>
+
+	<style>
+
+</style>
+<footer class="footer" style="width:100%;float:left;width: 100%;margin-top: 30px;">
+	<div class="container" id="yiiba-bottom">
+		<div class="ybm-block">
+			<div class="ybm cf">
+				<dl>
+					<dt>
+						æ¨è/æœ€æ–°æ•™ç¨‹
+					</dt>
+										<dd>
+						Â·<a href="javascript:if(confirm('https://www.yiibai.com/sqlserver/  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓò»òÂ·¾¶Íâ²¿±»ÉèÖÃÎªËüµÄÆôÊ¼µØÖ·µÄµØÖ·¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='https://www.yiibai.com/sqlserver/'" tppabs="https://www.yiibai.com/sqlserver/" title="SQL Serveræ•™ç¨‹" target="_blank">SQL Serveræ•™ç¨‹</a>
+					</dd>
+										<dd>
+						Â·<a href="javascript:if(confirm('https://www.yiibai.com/web_service/  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓò»òÂ·¾¶Íâ²¿±»ÉèÖÃÎªËüµÄÆôÊ¼µØÖ·µÄµØÖ·¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='https://www.yiibai.com/web_service/'" tppabs="https://www.yiibai.com/web_service/" title="Web Serviceæ•™ç¨‹" target="_blank">Web Serviceæ•™ç¨‹</a>
+					</dd>
+										<dd>
+						Â·<a href="javascript:if(confirm('https://www.yiibai.com/spring_cloud/  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓò»òÂ·¾¶Íâ²¿±»ÉèÖÃÎªËüµÄÆôÊ¼µØÖ·µÄµØÖ·¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='https://www.yiibai.com/spring_cloud/'" tppabs="https://www.yiibai.com/spring_cloud/" title="Spring Cloudæ•™ç¨‹" target="_blank">Spring Cloudæ•™ç¨‹</a>
+					</dd>
+										<dd>
+						Â·<a href="javascript:if(confirm('https://www.yiibai.com/xslt/  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓò»òÂ·¾¶Íâ²¿±»ÉèÖÃÎªËüµÄÆôÊ¼µØÖ·µÄµØÖ·¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='https://www.yiibai.com/xslt/'" tppabs="https://www.yiibai.com/xslt/" title="XSLTæ•™ç¨‹" target="_blank">XSLTæ•™ç¨‹</a>
+					</dd>
+										<dd>
+						Â·<a href="javascript:if(confirm('https://www.yiibai.com/xsd/  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓò»òÂ·¾¶Íâ²¿±»ÉèÖÃÎªËüµÄÆôÊ¼µØÖ·µÄµØÖ·¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='https://www.yiibai.com/xsd/'" tppabs="https://www.yiibai.com/xsd/" title="XSDæ•™ç¨‹" target="_blank">XSDæ•™ç¨‹</a>
+					</dd>
+										<dd>
+						Â·<a href="javascript:if(confirm('https://www.yiibai.com/xquery/  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓò»òÂ·¾¶Íâ²¿±»ÉèÖÃÎªËüµÄÆôÊ¼µØÖ·µÄµØÖ·¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='https://www.yiibai.com/xquery/'" tppabs="https://www.yiibai.com/xquery/" title="XQueryæ•™ç¨‹" target="_blank">XQueryæ•™ç¨‹</a>
+					</dd>
+										<dd>
+						Â·<a href="javascript:if(confirm('https://www.yiibai.com/xpath/  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓò»òÂ·¾¶Íâ²¿±»ÉèÖÃÎªËüµÄÆôÊ¼µØÖ·µÄµØÖ·¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='https://www.yiibai.com/xpath/'" tppabs="https://www.yiibai.com/xpath/" title="XPathæ•™ç¨‹" target="_blank">XPathæ•™ç¨‹</a>
+					</dd>
+										<dd>
+						Â·<a href="javascript:if(confirm('https://www.yiibai.com/xml-rpc/  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓò»òÂ·¾¶Íâ²¿±»ÉèÖÃÎªËüµÄÆôÊ¼µØÖ·µÄµØÖ·¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='https://www.yiibai.com/xml-rpc/'" tppabs="https://www.yiibai.com/xml-rpc/" title="XML-RPCè¿œç¨‹æ–¹æ³•è°ƒç”¨æ•™ç¨‹" target="_blank">XML-RPCè¿œç¨‹æ–¹æ³•è°ƒç”¨æ•™ç¨‹...</a>
+					</dd>
+					
+				</dl>
+				<dl>
+					<dt>
+						æœ€æ–°æ›´æ–°
+					</dt>
+										<dd>
+						Â·<a target="_blank" href="javascript:if(confirm('https://www.yiibai.com/sqlserver/sql-server-sample-database.html  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓò»òÂ·¾¶Íâ²¿±»ÉèÖÃÎªËüµÄÆôÊ¼µØÖ·µÄµØÖ·¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='https://www.yiibai.com/sqlserver/sql-server-sample-database.html'" tppabs="https://www.yiibai.com/sqlserver/sql-server-sample-database.html" title="SQL Serverç¤ºä¾‹æ•°æ®åº“">SQL Serverç¤ºä¾‹æ•°æ®åº“...</a>
+					</dd>
+										<dd>
+						Â·<a target="_blank" href="javascript:if(confirm('https://www.yiibai.com/sqlserver/connect-to-the-sql-server.html  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓò»òÂ·¾¶Íâ²¿±»ÉèÖÃÎªËüµÄÆôÊ¼µØÖ·µÄµØÖ·¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='https://www.yiibai.com/sqlserver/connect-to-the-sql-server.html'" tppabs="https://www.yiibai.com/sqlserver/connect-to-the-sql-server.html" title="è¿æ¥åˆ°SQL Server">è¿æ¥åˆ°SQL Server</a>
+					</dd>
+										<dd>
+						Â·<a target="_blank" href="javascript:if(confirm('https://www.yiibai.com/sqlserver/install-sql-server.html  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓò»òÂ·¾¶Íâ²¿±»ÉèÖÃÎªËüµÄÆôÊ¼µØÖ·µÄµØÖ·¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='https://www.yiibai.com/sqlserver/install-sql-server.html'" tppabs="https://www.yiibai.com/sqlserver/install-sql-server.html" title="å®‰è£…SQL Server">å®‰è£…SQL Server</a>
+					</dd>
+										<dd>
+						Â·<a target="_blank" href="javascript:if(confirm('https://www.yiibai.com/sqlserver/what-is-sql-server.html  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓò»òÂ·¾¶Íâ²¿±»ÉèÖÃÎªËüµÄÆôÊ¼µØÖ·µÄµØÖ·¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='https://www.yiibai.com/sqlserver/what-is-sql-server.html'" tppabs="https://www.yiibai.com/sqlserver/what-is-sql-server.html" title="SQL Serveræ˜¯ä»€ä¹ˆï¼Ÿ">SQL Serveræ˜¯ä»€ä¹ˆï¼Ÿ...</a>
+					</dd>
+										<dd>
+						Â·<a target="_blank" href="javascript:if(confirm('https://www.yiibai.com/sql/sql-check-constraint.html  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓò»òÂ·¾¶Íâ²¿±»ÉèÖÃÎªËüµÄÆôÊ¼µØÖ·µÄµØÖ·¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='https://www.yiibai.com/sql/sql-check-constraint.html'" tppabs="https://www.yiibai.com/sql/sql-check-constraint.html" title="SQLæ£€æŸ¥çº¦æŸ">SQLæ£€æŸ¥çº¦æŸ</a>
+					</dd>
+										<dd>
+						Â·<a target="_blank" href="javascript:if(confirm('https://www.yiibai.com/sql/sql-not-null-constraint.html  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓò»òÂ·¾¶Íâ²¿±»ÉèÖÃÎªËüµÄÆôÊ¼µØÖ·µÄµØÖ·¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='https://www.yiibai.com/sql/sql-not-null-constraint.html'" tppabs="https://www.yiibai.com/sql/sql-not-null-constraint.html" title="SQL Not Nullçº¦æŸ">SQL Not Nullçº¦æŸ</a>
+					</dd>
+										<dd>
+						Â·<a target="_blank" href="javascript:if(confirm('https://www.yiibai.com/sql/sql-unique-constraint.html  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓò»òÂ·¾¶Íâ²¿±»ÉèÖÃÎªËüµÄÆôÊ¼µØÖ·µÄµØÖ·¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='https://www.yiibai.com/sql/sql-unique-constraint.html'" tppabs="https://www.yiibai.com/sql/sql-unique-constraint.html" title="SQLå”¯ä¸€çº¦æŸ">SQLå”¯ä¸€çº¦æŸ</a>
+					</dd>
+										<dd>
+						Â·<a target="_blank" href="javascript:if(confirm('https://www.yiibai.com/sql/sql-foreign-key.html  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓò»òÂ·¾¶Íâ²¿±»ÉèÖÃÎªËüµÄÆôÊ¼µØÖ·µÄµØÖ·¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='https://www.yiibai.com/sql/sql-foreign-key.html'" tppabs="https://www.yiibai.com/sql/sql-foreign-key.html" title="SQLå¤–é”®">SQLå¤–é”®</a>
+					</dd>
+					
+				</dl>
+
+				<dl>
+
+					<dt>
+						ç«™ç‚¹ä¿¡æ¯
+					</dt>
+					<dd>
+						Â· <a target="_blank" href="javascript:if(confirm('http://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&email=IBcWGRcSGBYYE2BRUQ5DT00  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓò»òÂ·¾¶Íâ²¿±»ÉèÖÃÎªËüµÄÆôÊ¼µØÖ·µÄµØÖ·¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&email=IBcWGRcSGBYYE2BRUQ5DT00'" tppabs="http://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&email=IBcWGRcSGBYYE2BRUQ5DT00" rel="external nofollow">æ„è§åé¦ˆ</a>
+					</dd>
+					<dd>
+						Â· <a target="_blank" href="javascript:if(confirm('https://www.yiibai.com/disclaimer.html  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓò»òÂ·¾¶Íâ²¿±»ÉèÖÃÎªËüµÄÆôÊ¼µØÖ·µÄµØÖ·¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='https://www.yiibai.com/disclaimer.html'" tppabs="https://www.yiibai.com/disclaimer.html">å…è´£å£°æ˜</a>
+					</dd>
+					<dd>
+						Â· <a target="_blank" href="javascript:if(confirm('https://www.yiibai.com/about_us.html  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓò»òÂ·¾¶Íâ²¿±»ÉèÖÃÎªËüµÄÆôÊ¼µØÖ·µÄµØÖ·¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='https://www.yiibai.com/about_us.html'" tppabs="https://www.yiibai.com/about_us.html">å…³äºæˆ‘ä»¬</a>
+					</dd>
+					<dd>
+						Â· <a target="_blank" href="javascript:if(confirm('https://www.yiibai.com/reward.html  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓò»òÂ·¾¶Íâ²¿±»ÉèÖÃÎªËüµÄÆôÊ¼µØÖ·µÄµØÖ·¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='https://www.yiibai.com/reward.html#to-qcode'" tppabs="https://www.yiibai.com/reward.html#to-qcode">å…³äºæåŠ©</a>
+					</dd>
+					<dd>
+						Â· <a target="_blank" href="javascript:if(confirm('https://www.yiibai.com/siteinfo/download.html  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓò»òÂ·¾¶Íâ²¿±»ÉèÖÃÎªËüµÄÆôÊ¼µØÖ·µÄµØÖ·¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='https://www.yiibai.com/siteinfo/download.html'" tppabs="https://www.yiibai.com/siteinfo/download.html" style="color:#e74851;">æ‰€æœ‰å®ä¾‹ä»£ç ä¸‹è½½</a>
+					</dd>
+				</dl>
+
+				<dl>
+					<dt>
+						æ˜“ç™¾æ•™ç¨‹å®˜æ–¹QQç¾¤
+					</dt>
+					<dd>
+						JAVAæŠ€æœ¯ï¼š227270512
+					</dd>
+					<dd>
+						MySQLæ•°æ®åº“ï¼š418407075
+					</dd>
+					<dd>
+						PythonæŠ€æœ¯ï¼š 287904175
+					</dd>
+					<dd>
+						å¤§æ•°æ®å¼€å‘ï¼š 655154550
+					</dd>
+					<dd>
+						LinuxæŠ€æœ¯ï¼š 479429477
+					</dd>
+					<dd>
+						PHP/WebæŠ€æœ¯ï¼š 460153241
+					</dd>
+
+				</dl>
+
+				<div class="search-share">
+					<div class="app-download">
+						<div>
+							<strong>å…³æ³¨å¾®ä¿¡å…¬ä¼—å·</strong>
+						</div>
+					</div>
+					<div class="share">
+						<img width="150" height="150" src="../static/img/qrcode.jpg" tppabs="https://www.yiibai.com/static/img/qrcode.jpg">
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</footer>
+
+<div id="footer-copyright" style="width: 100%;float:left;text-align: center;">
+	Copyright &copy; 2012-2019<strong><a href="javascript:if(confirm('https://www.yiibai.com/  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓò»òÂ·¾¶Íâ²¿±»ÉèÖÃÎªËüµÄÆôÊ¼µØÖ·µÄµØÖ·¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='https://www.yiibai.com/'" tppabs="https://www.yiibai.com/" target="_blank">æ˜“ç™¾æ•™ç¨‹</a></strong>&nbsp; <strong> 
+		<a href="javascript:if(confirm('https://www.yiibai.com/  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓò»òÂ·¾¶Íâ²¿±»ÉèÖÃÎªËüµÄÆôÊ¼µØÖ·µÄµØÖ·¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='https://www.yiibai.com/'" tppabs="https://www.yiibai.com/" target="_blank">yiibai.com</a></strong> All Rights Reserved. å¤‡æ¡ˆå·ï¼šç¼ICPå¤‡13001417å·-3  è”ç³»QQï¼š769728683 &nbsp;&nbsp;
+
+	<script>
+		var _hmt = _hmt || [];
+		(function() {
+			var hm = document.createElement("script");
+			hm.src = "../../hm.baidu.com/hm.js-424e222704e2274e37a8169110e6e00a"/*tpa=https://hm.baidu.com/hm.js?424e222704e2274e37a8169110e6e00a*/;
+			var s = document.getElementsByTagName("script")[0];
+			s.parentNode.insertBefore(hm, s);
+		})();
+	</script>
+
+</div>
+
+<div class="fixed-btn">
+	<a class="to-top" onclick="backTop();" href="#backTop" title="è¿”å›é¡¶éƒ¨"> <i
+	class="fa fa-angle-up"></i></a>
+
+	<a class="qrcode"
+	href="javascript:;" title="å…³æ³¨æˆ‘ä»¬"><i class="fa fa-qrcode"></i></a>
+
+	<a class="writer" target="_blank" href="javascript:if(confirm('http://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&email=IBcWGRcSGBYYE2BRUQ5DT00  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓò»òÂ·¾¶Íâ²¿±»ÉèÖÃÎªËüµÄÆôÊ¼µØÖ·µÄµØÖ·¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&email=IBcWGRcSGBYYE2BRUQ5DT00'" tppabs="http://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&email=IBcWGRcSGBYYE2BRUQ5DT00" style="font-size: 12px;"
+	title="é—®é¢˜åé¦ˆ"><i class="fa fa-envelope-o"
+	style="font-size: 20px;"></i></a>
+	<!-- qrcode modal -->
+
+	<div id="bottom-qrcode" class="modal fade in" style="display: none;">
+		<h4>å¾®ä¿¡å…³æ³¨</h4>
+		<div class="panel-body">
+			<img alt="å¾®ä¿¡å…³æ³¨" width="128" height="128"
+			src="../static/img/qrcode.jpg" tppabs="https://www.yiibai.com/static/img/qrcode.jpg">
+		</div>
+	</div>
+</div>
+
+<script src="../static/js/jquery.js" tppabs="https://www.yiibai.com/static/js/jquery.js"></script>
+<script src="../static/js/prism.js" tppabs="https://www.yiibai.com/static/js/prism.js"></script>
+<script src="../static/js/layer/layer.js" tppabs="https://www.yiibai.com/static/js/layer/layer.js"></script>
+<script src="../static/js/main.js-v=v5.0.1215" tppabs="https://www.yiibai.com/static/js/main.js?v=v5.0.1215"></script>
+<script>
+	$("#btn-reward").on('click', function() {
+		layer.open({
+			type : 2,
+			title : "è¯·æ‰«æä»¥ä¸‹äºŒç»´ç æ”¯ä»˜æ‰“èµ",
+			area : ['56%', '70%'],
+			shade : 0.4,
+			closeBtn : 1,
+			shadeClose : true,
+			content : '../static/images/reward.png'/*tpa=https://www.yiibai.com/static/images/reward.png*/
+		});
+
+	}); 
+</script>
+	<script src="../static/js/main.js-v=v5.0.1215" tppabs="https://www.yiibai.com/static/js/main.js?v=v5.0.1215"></script>
+</body>
+
+</html>
